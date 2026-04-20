@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pies y Küchen artesanales en Cuenca, Ecuador. Pedidos por WhatsApp. Entregas a domicilio. La Dulce Masa.">
-  <meta property="og:title" content="La Dulce Masa | Pies y Küchen en Cuenca">
-  <meta property="og:description" content="Sabores artesanales horneados con amor. Pide por WhatsApp.">
-  <meta name="theme-color" content="#2C1A0E">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥧</text></svg>">
-  <title>La Dulce Masa | Pies y Küchen Artesanales en Cuenca</title>
+  <meta name="description" content="El Oso Pastelero - Kuchenes, pies y cookies artesanales en Cuenca, Ecuador. Hechos con amor. Haz tu pedido por WhatsApp.">
+  <meta property="og:title" content="El Oso Pastelero | Kuchenes y Pies en Cuenca">
+  <meta property="og:description" content="Kuchenes, pies y cookies artesanales horneados con amor en Cuenca. Pide por WhatsApp.">
+  <meta name="theme-color" content="#5C3317">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐻</text></svg>">
+  <title>El Oso Pastelero | Kuchenes y Pies Artesanales en Cuenca</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -51,16 +51,7 @@
       font-weight: 600;
     }
 
-    /* SVG NOISE FILTER */
-    .svg-filters {
-      position: absolute;
-      width: 0;
-      height: 0;
-    }
-
-    /* ═══════════════════════════════════
-       NAVIGATION STICKY
-    ═══════════════════════════════════ */
+    /* NAVIGATION */
     .nav {
       position: fixed;
       top: 0;
@@ -87,10 +78,17 @@
       color: var(--brown-deep);
       text-decoration: none;
       transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .nav.scrolled .nav-logo {
       color: var(--cream);
+    }
+
+    .nav-logo-bear {
+      font-size: 1.8rem;
     }
 
     .nav-cart {
@@ -128,9 +126,7 @@
       justify-content: center;
     }
 
-    /* ═══════════════════════════════════
-       HERO
-    ═══════════════════════════════════ */
+    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -169,29 +165,37 @@
       z-index: 2;
     }
 
-    .hero-title {
-      font-size: clamp(48px, 10vw, 72px);
-      font-weight: 600;
-      color: var(--brown-deep);
-      margin-bottom: 1rem;
+    .hero-bear {
+      font-size: 100px;
+      margin-bottom: 0.5rem;
       opacity: 0;
       animation: fadeSlideUp 0.8s ease forwards;
     }
 
-    .hero-ornament {
-      width: 200px;
-      height: 40px;
-      margin: 0 auto 1.5rem;
+    .hero-title {
+      font-size: clamp(40px, 8vw, 64px);
+      font-weight: 600;
+      color: var(--brown-deep);
+      margin-bottom: 0.5rem;
       opacity: 0;
-      animation: fadeSlideUp 0.8s ease 0.3s forwards;
+      animation: fadeSlideUp 0.8s ease 0.15s forwards;
     }
 
     .hero-tagline {
       font-family: var(--font-display);
       font-style: italic;
-      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
       color: var(--text-mid);
-      margin-bottom: 2.5rem;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease 0.3s forwards;
+    }
+
+    .hero-products {
+      font-size: 1rem;
+      color: var(--brown-mid);
+      font-weight: 500;
+      margin-bottom: 2rem;
       opacity: 0;
       animation: fadeSlideUp 0.8s ease 0.5s forwards;
     }
@@ -216,11 +220,40 @@
       box-shadow: var(--shadow-hover);
     }
 
-    .hero-emoji {
-      font-size: 5rem;
-      margin-bottom: 1rem;
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
       opacity: 0;
-      animation: fadeSlideUp 0.8s ease 0.15s forwards;
+      animation: fadeSlideUp 0.8s ease 1s forwards;
+    }
+
+    .hero-scroll span {
+      display: block;
+      width: 24px;
+      height: 40px;
+      border: 2px solid var(--brown-mid);
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .hero-scroll span::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 8px;
+      background: var(--brown-mid);
+      border-radius: 2px;
+      animation: scrollDown 1.5s infinite;
+    }
+
+    @keyframes scrollDown {
+      0%, 100% { opacity: 1; top: 8px; }
+      50% { opacity: 0.5; top: 16px; }
     }
 
     @keyframes fadeSlideUp {
@@ -234,9 +267,7 @@
       }
     }
 
-    /* ═══════════════════════════════════
-       SECTION DIVIDER
-    ═══════════════════════════════════ */
+    /* SECTION DIVIDER */
     .section-divider {
       width: 100%;
       height: 60px;
@@ -252,9 +283,7 @@
       fill: var(--accent-light);
     }
 
-    /* ═══════════════════════════════════
-       ABOUT
-    ═══════════════════════════════════ */
+    /* ABOUT */
     .about {
       padding: 5rem 2rem;
       background: var(--white-warm);
@@ -299,9 +328,7 @@
       font-weight: 500;
     }
 
-    /* ═══════════════════════════════════
-       CATÁLOGO
-    ═══════════════════════════════════ */
+    /* CATÁLOGO */
     .catalog {
       padding: 5rem 2rem;
       background: var(--cream);
@@ -363,6 +390,14 @@
       text-align: center;
       margin-bottom: 1rem;
       line-height: 1;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
     }
 
     .product-name {
@@ -455,9 +490,45 @@
       transform: scale(1.05);
     }
 
-    /* ═══════════════════════════════════
-       CÓMO FUNCIONA
-    ═══════════════════════════════════ */
+    /* GALLERY */
+    .gallery {
+      padding: 5rem 2rem;
+      background: var(--white-warm);
+    }
+
+    .gallery h2 {
+      text-align: center;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 2rem;
+      color: var(--brown-deep);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* CÓMO FUNCIONA */
     .how-it-works {
       padding: 5rem 2rem;
       background: var(--brown-deep);
@@ -528,9 +599,7 @@
       z-index: 1;
     }
 
-    /* ═══════════════════════════════════
-       TESTIMONIOS
-    ═══════════════════════════════════ */
+    /* TESTIMONIOS */
     .testimonials {
       padding: 5rem 2rem;
       background: linear-gradient(135deg, var(--brown-mid) 0%, var(--brown-deep) 100%);
@@ -604,9 +673,7 @@
       margin-top: 0.25rem;
     }
 
-    /* ═══════════════════════════════════
-       FOOTER
-    ═══════════════════════════════════ */
+    /* FOOTER */
     .footer {
       padding: 4rem 2rem;
       background: var(--brown-deep);
@@ -619,6 +686,14 @@
       font-weight: 600;
       margin-bottom: 0.5rem;
       font-family: var(--font-display);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .footer-bear {
+      font-size: 2rem;
     }
 
     .footer-tagline {
@@ -664,9 +739,7 @@
       opacity: 0.5;
     }
 
-    /* ═══════════════════════════════════
-       CART PANEL
-    ═══════════════════════════════════ */
+    /* CART PANEL */
     .cart-overlay {
       position: fixed;
       inset: 0;
@@ -862,9 +935,7 @@
       height: 24px;
     }
 
-    /* ═══════════════════════════════════
-       FLOATING WHATSAPP BUTTON
-    ═══════════════════════════════════ */
+    /* FLOATING WHATSAPP */
     .whatsapp-float {
       position: fixed;
       bottom: 24px;
@@ -893,9 +964,7 @@
       fill: var(--white-warm);
     }
 
-    /* ═══════════════════════════════════
-       MOBILE RESPONSIVE
-    ═══════════════════════════════════ */
+    /* MOBILE */
     @media (max-width: 768px) {
       .nav {
         padding: 0.8rem 1rem;
@@ -915,24 +984,16 @@
         padding: 100px 1.5rem 60px;
       }
 
-      .hero-title {
-        font-size: 44px;
-      }
-
-      .hero-ornament {
-        width: 160px;
+      .hero-bear {
+        font-size: 80px;
       }
 
       .products-grid {
         grid-template-columns: 1fr;
       }
 
-      .product-card {
-        padding: 1.25rem;
-      }
-
-      .product-emoji {
-        font-size: 56px;
+      .gallery-grid {
+        grid-template-columns: 1fr;
       }
 
       .steps {
@@ -960,7 +1021,8 @@
         bottom: 20px;
         left: 20px;
         width: 56px;
-        height: 56px      }
+        height: 56px;
+      }
 
       .about-icons {
         gap: 1.5rem;
@@ -972,7 +1034,6 @@
       }
     }
 
-    /* Fade-in animations */
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -987,19 +1048,12 @@
 </head>
 <body>
 
-  <!-- SVG Filters -->
-  <svg class="svg-filters">
-    <defs>
-      <filter id="noise">
-        <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" result="noise"/>
-        <feColorMatrix type="saturate" values="0"/>
-      </filter>
-    </defs>
-  </svg>
-
-  <!-- NAVIGATION -->
-  <nav class="nav" id="nav">
-    <a href="#" class="nav-logo">La Dulce Masa</a>
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-bear">🐻</span>
+      <span>El Oso Pastelero</span>
+    </a>
     <button class="nav-cart" onclick="toggleCart()">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
         <circle cx="9" cy="21" r="1"></circle>
@@ -1013,45 +1067,34 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <div class="hero-emoji">🥧</div>
-      <h1 class="hero-title">La Dulce Masa</h1>
-      <svg class="hero-ornament" viewBox="0 0 200 40">
-        <path d="M0 20 Q25 5, 50 20 T100 20 T150 20 T200 20" stroke="#C8724A" stroke-width="1.5" fill="none" opacity="0.6"/>
-        <circle cx="100" cy="20" r="4" fill="#C8724A"/>
-        <path d="M85 20 L95 20 M105 20 L115 20" stroke="#C8724A" stroke-width="1" opacity="0.4"/>
-        <circle cx="60" cy="20" r="2" fill="#C8724A" opacity="0.5"/>
-        <circle cx="140" cy="20" r="2" fill="#C8724A" opacity="0.5"/>
-      </svg>
-      <p class="hero-tagline">Horneado con tiempo. Entregado con amor.</p>
+      <div class="hero-bear">🐻</div>
+      <h1 class="hero-title">El Oso Pastelero</h1>
+      <p class="hero-tagline">Horneado con tiempo. Hecho con amor. 🐻</p>
+      <p class="hero-products">Kuchenes · Pies · Cookies Artesanales</p>
       <a href="#catalog" class="hero-cta">Ver nuestros sabores</a>
+    </div>
+    <div class="hero-scroll">
+      <span></span>
     </div>
   </section>
 
-  <!-- DIVIDER -->
-  <div class="section-divider">
-    <svg viewBox="0 0 300 30">
-      <path d="M0 15 Q30 5, 60 15 T120 15 T180 15 T240 15 T300 15" stroke="currentColor" stroke-width="1" fill="none"/>
-      <circle cx="150" cy="15" r="3" fill="currentColor"/>
-    </svg>
-  </div>
-
-  <!-- SOBRE NOSOTROS -->
+  <!-- ABOUT -->
   <section class="about fade-in" id="about">
     <h2>Nuestra Historia</h2>
     <p class="about-text">
-      En el corazón de Cuenca, nacimos de una tradición familiar que combina recetas 
-      europeas con el cariño serrano del Austro ecuatoriano. Cada pie y küchen es 
-      elaborado a mano, con ingredientes locales seleccionados y ese toque secreto 
-      que solo el amor al oficio puede dar.
+      En el corazón de Cuenca, nacimos del amor por la pastelería artesanal. 
+      Cada kuchen, pie y cookie es elaborado a mano con ingredientes selecionados 
+      y esa receta especial que solo el cariño puede dar. Como dice nuestro oso: 
+      <strong>"Hecho con amor"</strong>.
     </p>
     <div class="about-icons">
       <div class="about-icon">
-        <span>🍞</span>
-        <small>Horneado Artesanal</small>
+        <span>🥧</span>
+        <small>Kuchenes Alemanes</small>
       </div>
       <div class="about-icon">
-        <span>🌾</span>
-        <small>Ingredientes Selectos</small>
+        <span>🍪</span>
+        <small>Cookies Artesanales</small>
       </div>
       <div class="about-icon">
         <span>💛</span>
@@ -1060,18 +1103,15 @@
     </div>
   </section>
 
-  <!-- DIVIDER -->
-  <div class="section-divider" style="background: var(--cream);">
-    <svg viewBox="0 0 300 30">
-      <path d="M0 15 Q30 25, 60 15 T120 15 T180 15 T240 15 T300 15" stroke="currentColor" stroke-width="1" fill="none"/>
-      <circle cx="150" cy="15" r="3" fill="currentColor"/>
-    </svg>
-  </div>
-
   <!-- CATÁLOGO -->
   <section class="catalog fade-in" id="catalog">
     <h2>Nuestros Sabores</h2>
-    <p class="catalog-subtitle">Tradición europea, corazón cuencano</p>
+    <p class="catalog-subtitle">Tradición alemana, corazón cuencano</p>
+
+    <div class="category">
+      <h3>~ Kuchenes ~</h3>
+      <div class="products-grid" id="kuchenGrid"></div>
+    </div>
 
     <div class="category">
       <h3>~ Pies ~</h3>
@@ -1079,18 +1119,29 @@
     </div>
 
     <div class="category">
-      <h3>~ Küchen ~</h3>
-      <div class="products-grid" id="kuchenGrid"></div>
+      <h3>~ Cookies ~</h3>
+      <div class="products-grid" id="cookiesGrid"></div>
     </div>
   </section>
 
-  <!-- DIVIDER -->
-  <div class="section-divider" style="background: var(--cream);">
-    <svg viewBox="0 0 300 30">
-      <path d="M0 15 Q30 5, 60 15 T120 15 T180 15 T240 15 T300 15" stroke="currentColor" stroke-width="1" fill="none"/>
-      <circle cx="150" cy="15" r="3" fill="currentColor"/>
-    </svg>
-  </div>
+  <!-- GALLERY -->
+  <section class="gallery fade-in" id="gallery">
+    <h2>Nuestros Productos</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400" alt="Kuchen de nueces" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=400" alt="Pie de frutas" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400" alt="Cookies artesanales" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400" alt="Tarta de frutas" loading="lazy">
+      </div>
+    </div>
+  </section>
 
   <!-- CÓMO FUNCIONA -->
   <section class="how-it-works fade-in" id="how">
@@ -1118,7 +1169,6 @@
             <line x1="28" y1="28" x2="52" y2="28" stroke-width="2"/>
             <line x1="28" y1="38" x2="48" y2="38" stroke-width="2"/>
             <line x1="28" y1="48" x2="44" y2="48" stroke-width="2"/>
-            <path d="M55 55 L65 65 M65 55 L55 65" stroke-width="2"/>
           </svg>
         </div>
         <h4 class="step-title">Personaliza</h4>
@@ -1140,14 +1190,6 @@
     </div>
   </section>
 
-  <!-- DIVIDER -->
-  <div class="section-divider" style="background: var(--brown-deep);">
-    <svg viewBox="0 0 300 30" style="fill: var(--accent-light);">
-      <path d="M0 15 Q30 5, 60 15 T120 15 T180 15 T240 15 T300 15" stroke="currentColor" stroke-width="1" fill="none"/>
-      <circle cx="150" cy="15" r="3" fill="currentColor"/>
-    </svg>
-  </div>
-
   <!-- TESTIMONIOS -->
   <section class="testimonials fade-in" id="testimonials">
     <h2>Lo Que Dicen Nuestros Clientes</h2>
@@ -1156,62 +1198,64 @@
         <span class="testimonial-quote">"</span>
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">
-          "El pie de manzana con canela me transportó a la cocina de mi abuela. 
-          Es exactamente lo que buscaba: auténtico, delicado y lleno de recuerdos."
+          "El kuchen de ciruela es espectacular. Me recuerda a los que hacía mi abuela 
+          alemana. Y la presentación con el oso es adorable."
         </p>
-        <p class="testimonial-author">María Elena Aguilar</p>
+        <p class="testimonial-author">Sofia Wegmann</p>
+        <p class="testimonial-location">Cuenca, Ecuador</p>
+      </div>
+      <div class="testimonial-card">
+        <span class="testimonial-quote">"</span>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">
+          "Pedí cookies para el cumpleaños de mi hija y fueron la sensación. 
+          ¡Ya es tradición en casa! El oso pastelero es genial."
+        </p>
+        <p class="testimonial-author">María José Espinoza</p>
         <p class="testimonial-location">El Ejido, Cuenca</p>
       </div>
       <div class="testimonial-card">
         <span class="testimonial-quote">"</span>
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">
-          "Pedí un küchen de ciruela para el cumpleaños de mi mamá y fue la sensación 
-          de la fiesta. Todos preguntaron dónde lo conseguí. ¡Ya es tradición!"
+          "El pie de nueces es una obra de arte. Y saber que todo es hecho con amor 
+          se nota en cada mordida. ¡100% recomendado!"
         </p>
-        <p class="testimonial-author">Roberto Córdova</p>
+        <p class="testimonial-author">Andrés Córdova</p>
         <p class="testimonial-location">San Sebastián, Cuenca</p>
-      </div>
-      <div class="testimonial-card">
-        <span class="testimonial-quote">"</span>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">
-          "La presentación es impecable y el sabor súper auténtico. Cada domingo es 
-          una excusa perfecta para celebrar con un küchen de durazno."
-        </p>
-        <p class="testimonial-author">Carmen Lucía Suástegui</p>
-        <p class="testimonial-location">El Vecino, Cuenca</p>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <h2 class="footer-logo">La Dulce Masa</h2>
-    <p class="footer-tagline">Pies y Küchen Artesanales | Cuenca, Ecuador 🇪🇨</p>
+    <h2 class="footer-logo">
+      <span class="footer-bear">🐻</span>
+      El Oso Pastelero
+    </h2>
+    <p class="footer-tagline">Kuchenes, Pies y Cookies | Cuenca, Ecuador 🇪🇨</p>
     <div class="footer-info">
       <span>🕐 Lunes a Sábado: 8:00 - 19:00</span>
-      <span>📱 WhatsApp: +593 XXXXXXXXX</span>
+      <span>📱 WhatsApp: +593 XX XXX XXXX</span>
       <span>📍 Entregas en Cuenca</span>
+      <span>📸 @osopastelero</span>
     </div>
     <div class="footer-social">
-      <a href="https://instagram.com/ladulcemasa" target="_blank">📸 @ladulcemasa</a>
+      <a href="https://instagram.com/osopastelero" target="_blank">📸 @osopastelero</a>
     </div>
-    <p class="footer-copy">© 2026 La Dulce Masa. Todos los derechos reservados.</p>
+    <p class="footer-copy">© 2026 El Oso Pastelero. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- CART OVERLAY -->
+  <!-- CART -->
   <div class="cart-overlay" onclick="toggleCart()"></div>
-
-  <!-- CART PANEL -->
   <div class="cart-panel" id="cartPanel">
     <div class="cart-header">
-      <h3>🛒 Tu Pedido</h3>
+      <h3>🐻 Tu Pedido</h3>
       <button class="cart-close" onclick="toggleCart()">&times;</button>
     </div>
     <div class="cart-items" id="cartItems">
       <div class="cart-empty">
-        <span>🥺</span>
+        <span>🐻</span>
         <p>Tu carrito está vacío</p>
         <p style="font-size: 0.9rem; margin-top: 0.5rem;">¡Explora nuestros sabores!</p>
       </div>
@@ -1222,13 +1266,13 @@
         <span class="cart-total-price" id="cartTotal">$0.00</span>
       </div>
       <div class="cart-form">
-        <input type="text" class="cart-input" id="cartAddress" placeholder="¿A qué sector de Cuenca entregamos? (Ej: El Ejido, Totoracocha...)">
-        <textarea class="cart-textarea" id="cartNote" placeholder="Nota especial 📝 (Ej: Sin azúcar, dedicatoria, hora preferida...)"></textarea>
+        <input type="text" class="cart-input" id="cartAddress" placeholder="¿A qué sector de Cuenca entregamos?">
+        <textarea class="cart-textarea" id="cartNote" placeholder="Nota especial 📝 (Ej: Sin azúcar, dedicatoria...)"></textarea>
         <button class="whatsapp-btn" onclick="sendWhatsApp()">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
-          Enviar pedido por WhatsApp 💬
+          Enviar pedido por WhatsApp 🐻
         </button>
       </div>
     </div>
@@ -1242,38 +1286,35 @@
   </a>
 
   <script>
-    // ═══════════════════════════════════
-    // DATA
-    // ═══════════════════════════════════
     const WHATSAPP_NUMBER = '593XXXXXXXXX';
 
     const products = {
-      pies: [
-        { id: 'pie-manzana', name: 'Pie de Manzana Canela', desc: 'Canela y manzana en cada mordida', price: 8.50, emoji: '🍎' },
-        { id: 'pie-limon', name: 'Pie de Limón Merengado', desc: 'Refresco cítrico que despierta el alma', price: 9.00, emoji: '🍋' },
-        { id: 'pie-mora', name: 'Pie de Mora Silvestre', desc: 'Bosque andino en cada capa', price: 8.50, emoji: '🫐' },
-        { id: 'pie-maracuya', name: 'Pie de Maracuyá', desc: 'La acidez perfecta que enamora', price: 9.00, emoji: '🥭' },
-        { id: 'pie-chocolate', name: 'Pie de Chocolate Belga', desc: 'Cacao de arriba, alma de Europa', price: 10.00, emoji: '🍫' }
-      ],
       kuchen: [
-        { id: 'kuchen-ciruela', name: 'Küchen de Ciruela', desc: 'Ciruelas rojas del Valle Andino', price: 9.50, emoji: '🍑' },
-        { id: 'kuchen-durazno', name: 'Küchen de Durazno', desc: 'Sol y dulzura de temporada', price: 9.00, emoji: '🍑' },
-        { id: 'kuchen-queso-mora', name: 'Küchen de Queso con Mora', desc: 'Queso fresco y mora serrana', price: 10.00, emoji: '🧀' },
-        { id: 'kuchen-manzana', name: 'Küchen de Manzana Canela', desc: 'La combinación que nunca falla', price: 9.50, emoji: '🥧' }
+        { id: 'kuchen-ciruela', name: 'Kuchen de Ciruela', desc: 'Ciruelas rojas del Valle Andino', price: 9.50, emoji: '🍑' },
+        { id: 'kuchen-durazno', name: 'Kuchen de Durazno', desc: 'Sol y dulzura de temporada', price: 9.00, emoji: '🍑' },
+        { id: 'kuchen-queso-mora', name: 'Kuchen de Queso con Mora', desc: 'Queso fresco y mora serrana', price: 10.00, emoji: '🧀' },
+        { id: 'kuchen-manzana', name: 'Kuchen de Manzana Canela', desc: 'La combinación que nunca falla', price: 9.50, emoji: '🍎' }
+      ],
+      pies: [
+        { id: 'pie-nueces', name: 'Pie de Nueces', desc: 'Nueces de三峡 con caramelo dorado', price: 10.50, emoji: '🥜' },
+        { id: 'pie-manzana', name: 'Pie de Manzana', desc: 'Manzanas del Valle con canela', price: 8.50, emoji: '🍎' },
+        { id: 'pie-berries', name: 'Pie de Berries', desc: 'Mix de berries frescos con lattice', price: 9.50, emoji: '🫐' },
+        { id: 'pie-chocolate', name: 'Pie de Chocolate', desc: 'Cacao artesanal 70% cacao', price: 9.00, emoji: '🍫' }
+      ],
+      cookies: [
+        { id: 'cookie-chocolate', name: 'Cookie de Chocolate', desc: 'Chunks de chocolate belga', price: 4.50, emoji: '🍪' },
+        { id: 'cookie-avena', name: 'Cookie de Avena', desc: 'Avena con pasas y canela', price: 4.00, emoji: '🥣' },
+        { id: 'cookie-mantequilla', name: 'Cookie de Mantequilla', desc: 'Clásico, derretido por dentro', price: 3.50, emoji: '🧈' },
+        { id: 'alfajores', name: 'Alfajores', desc: 'Dulce de leche y coco rallado', price: 5.00, emoji: '🥠' }
       ]
     };
 
     let cart = [];
 
-    // ═══════════════════════════════════
-    // RENDER PRODUCTS
-    // ═══════════════════════════════════
     function renderProducts() {
-      const piesGrid = document.getElementById('piesGrid');
-      const kuchenGrid = document.getElementById('kuchenGrid');
-
-      piesGrid.innerHTML = products.pies.map(p => createProductCard(p)).join('');
-      kuchenGrid.innerHTML = products.kuchen.map(p => createProductCard(p)).join('');
+      document.getElementById('kuchenGrid').innerHTML = products.kuchen.map(p => createProductCard(p)).join('');
+      document.getElementById('piesGrid').innerHTML = products.pies.map(p => createProductCard(p)).join('');
+      document.getElementById('cookiesGrid').innerHTML = products.cookies.map(p => createProductCard(p)).join('');
     }
 
     function createProductCard(product) {
@@ -1304,16 +1345,14 @@
     }
 
     function getProduct(productId) {
-      return [...products.pies, ...products.kuchen].find(p => p.id === productId);
+      return [...products.kuchen, ...products.pies, ...products.cookies].find(p => p.id === productId);
     }
 
     function updateQty(productId, delta) {
       const existing = cart.find(i => i.id === productId);
       if (existing) {
         existing.qty = Math.max(0, existing.qty + delta);
-        if (existing.qty === 0) {
-          cart = cart.filter(i => i.id !== productId);
-        }
+        if (existing.qty === 0) cart = cart.filter(i => i.id !== productId);
       } else if (delta > 0) {
         const product = getProduct(productId);
         cart.push({ id: productId, name: product.name, price: product.price, qty: 1 });
@@ -1324,9 +1363,8 @@
 
     function addToCart(productId) {
       const existing = cart.find(i => i.id === productId);
-      if (existing) {
-        existing.qty++;
-      } else {
+      if (existing) existing.qty++;
+      else {
         const product = getProduct(productId);
         cart.push({ id: productId, name: product.name, price: product.price, qty: 1 });
       }
@@ -1343,9 +1381,6 @@
       updateCartUI();
     }
 
-    // ═══════════════════════════════════
-    // CART UI
-    // ═══════════════════════════════════
     function updateCartUI() {
       const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
       const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
@@ -1358,7 +1393,7 @@
       if (cart.length === 0) {
         cartItems.innerHTML = `
           <div class="cart-empty">
-            <span>🥺</span>
+            <span>🐻</span>
             <p>Tu carrito está vacío</p>
             <p style="font-size: 0.9rem; margin-top: 0.5rem;">¡Explora nuestros sabores!</p>
           </div>
@@ -1391,18 +1426,16 @@
       document.querySelector('.cart-overlay').classList.toggle('active');
     }
 
-    // ═══════════════════════════════════
-    // WHATSAPP MESSAGE
-    // ═══════════════════════════════════
     function sendWhatsApp() {
       const address = document.getElementById('cartAddress').value.trim();
       const note = document.getElementById('cartNote').value.trim();
 
-      let message = `🥧 *Pedido - La Dulce Masa*\n`;
+      let message = `🐻 *Pedido - El Oso Pastelero*\n`;
       message += `─────────────────\n`;
 
       cart.forEach(item => {
-        const emoji = getProduct(item.id)?.emoji || '🍰';
+        const product = getProduct(item.id);
+        const emoji = product?.emoji || '🥧';
         message += `${emoji} ${item.name} x${item.qty} — $${(item.price * item.qty).toFixed(2)}\n`;
       });
 
@@ -1410,57 +1443,29 @@
       message += `─────────────────\n`;
       message += `💰 *Total: $${total.toFixed(2)}*\n`;
 
-      if (address) {
-        message += `📍 Entrega en: ${address}\n`;
-      }
+      if (address) message += `📍 Entrega en: ${address}\n`;
+      if (note) message += `📝 Nota: ${note}\n`;
 
-      if (note) {
-        message += `📝 Nota: ${note}\n`;
-      }
+      message += `\n¡Gracias por elegirnos! 🐻💛`;
 
-      message += `\n¡Gracias por elegirnos! 💛`;
-
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-      
-      window.open(whatsappUrl, '_blank');
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
     }
 
-    // ═══════════════════════════════════
-    // NAVIGATION SCROLL
-    // ═══════════════════════════════════
-    const nav = document.getElementById('nav');
-    let lastScroll = 0;
-
+    // Nav scroll effect
     window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      
-      if (currentScroll > 80) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-      
-      lastScroll = currentScroll;
+      const nav = document.getElementById('nav');
+      if (window.pageYOffset > 80) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
     });
 
-    // ═══════════════════════════════════
-    // FADE-IN ANIMATIONS
-    // ═══════════════════════════════════
-    const fadeElements = document.querySelectorAll('.fade-in');
+    // Fade-in
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    fadeElements.forEach(el => observer.observe(el));
-
-    // ═══════════════════════════════════
-    // INIT
-    // ═══════════════════════════════════
     renderProducts();
   </script>
 
