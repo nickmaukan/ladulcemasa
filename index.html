@@ -3,30 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kuchen Trujen - Kuchen, pies y cookies artesanales en Cuenca, Ecuador. Hechos con amor. Haz tu pedido por WhatsApp.">
-  <meta property="og:title" content="Kuchen Trujen | Kuchenes y Pies en Cuenca">
-  <meta property="og:description" content="Kuchenes, pies y cookies artesanales horneados con amor en Cuenca. Pide por WhatsApp.">
-  <meta name="theme-color" content="#5C3317">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐻</text></svg>">
-  <title>Kuchen Trujen | Kuchenes y Pies Artesanales en Cuenca</title>
+  <title>Kuchen Trujen | Kuchen Artesanal en Cuenca</title>
+  <meta name="description" content="Kuchen artesanal horneado con recetas de familia en Cuenca, Ecuador. Ideal para regalos y momentos especiales. Encarga por WhatsApp.">
+  <meta property="og:title" content="Kuchen Trujen | Kuchen Artesanal en Cuenca">
+  <meta property="og:description" content="Receta especial de familia, horneada con cariño. El regalo perfecto.">
+  <meta name="theme-color" content="#3D2B1F">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --font-display: 'Cormorant Garamond', serif;
       --font-body: 'DM Sans', sans-serif;
-      --cream: #F7F0E3;
-      --brown-deep: #2C1A0E;
-      --brown-mid: #5C3317;
-      --accent: #C8724A;
-      --accent-light: #F0C9A8;
-      --white-warm: #FFFDF8;
-      --text-dark: #1E1008;
-      --text-mid: #6B4226;
-      --success: #4A8C59;
-      --shadow: 0 4px 20px rgba(44, 26, 14, 0.08);
-      --shadow-hover: 0 12px 40px rgba(44, 26, 14, 0.15);
+      
+      --cream: #FAF7F2;
+      --cream-light: #FDFCFA;
+      --warm-white: #FFFCF9;
+      
+      --brown-deep: #3D2B1F;
+      --brown-mid: #6B4D3A;
+      --brown-light: #8B6B52;
+      
+      --gold: #C9A962;
+      --gold-light: #E5D4A1;
+      --gold-dark: #A68B3D;
+      
+      --text-primary: #2C1F14;
+      --text-secondary: #6B5D4D;
+      --text-muted: #9B8B7A;
+      
+      --divider: #E8E0D5;
+      --shadow: rgba(61, 43, 31, 0.08);
+      --shadow-hover: rgba(61, 43, 31, 0.15);
     }
 
     * {
@@ -42,573 +51,423 @@
     body {
       font-family: var(--font-body);
       background-color: var(--cream);
-      color: var(--text-dark);
+      color: var(--text-primary);
       line-height: 1.6;
     }
 
     h1, h2, h3, h4 {
       font-family: var(--font-display);
-      font-weight: 600;
+      font-weight: 500;
     }
 
-    /* NAVIGATION */
+    /* NAV */
     .nav {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
-      padding: 1rem 2rem;
+      padding: 1.2rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: transparent;
-      transition: all 0.4s ease;
-    }
-
-    .nav.scrolled {
-      background: var(--brown-deep);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--divider);
+      transition: all 0.3s;
     }
 
     .nav-logo {
       font-family: var(--font-display);
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 600;
       color: var(--brown-deep);
       text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      text-decoration: none;
       transition: color 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      font-weight: 500;
     }
 
-    .nav.scrolled .nav-logo {
-      color: var(--cream);
+    .nav-links a:hover {
+      color: var(--gold-dark);
     }
 
-    .nav-logo-bear {
-      font-size: 1.8rem;
+    .nav-cta {
+      background: var(--brown-deep);
+      color: var(--cream) !important;
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      transition: all 0.3s !important;
     }
 
-    .nav-cart {
-      position: relative;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-
-    .nav-cart svg {
-      width: 28px;
-      height: 28px;
-      stroke: var(--brown-deep);
-      transition: stroke 0.3s;
-    }
-
-    .nav.scrolled .nav-cart svg {
-      stroke: var(--cream);
-    }
-
-    .nav-cart-badge {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: var(--accent);
-      color: var(--white-warm);
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      font-size: 0.75rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .nav-cta:hover {
+      background: var(--gold-dark) !important;
+      transform: translateY(-2px);
     }
 
     /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 120px 2rem 80px;
+      padding: 100px 2rem 60px;
       position: relative;
+      background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 50%, var(--gold-light) 100%);
       overflow: hidden;
     }
 
     .hero::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: 
-        radial-gradient(ellipse at 30% 20%, var(--accent-light) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 80%, var(--cream) 0%, transparent 60%),
-        linear-gradient(180deg, var(--cream) 0%, var(--accent-light) 100%);
-      opacity: 0.6;
+      top: -50%;
+      right: -20%;
+      width: 70%;
+      height: 150%;
+      background: radial-gradient(ellipse, var(--gold-light) 0%, transparent 70%);
+      opacity: 0.4;
       z-index: 0;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-      opacity: 0.03;
-      z-index: 1;
     }
 
     .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 1;
+      max-width: 800px;
     }
 
-    .hero-bear {
-      font-size: 100px;
-      margin-bottom: 0.5rem;
-      opacity: 0;
-      animation: fadeSlideUp 0.8s ease forwards;
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
     }
 
     .hero-title {
-      font-size: clamp(40px, 8vw, 64px);
-      font-weight: 600;
+      font-size: clamp(3.5rem, 10vw, 6rem);
+      font-weight: 400;
       color: var(--brown-deep);
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      color: var(--text-secondary);
       margin-bottom: 0.5rem;
-      opacity: 0;
-      animation: fadeSlideUp 0.8s ease 0.15s forwards;
     }
 
     .hero-tagline {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      color: var(--text-mid);
-      margin-bottom: 1rem;
-      opacity: 0;
-      animation: fadeSlideUp 0.8s ease 0.3s forwards;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
     }
 
-    .hero-products {
-      font-size: 1rem;
-      color: var(--brown-mid);
-      font-weight: 500;
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: fadeSlideUp 0.8s ease 0.5s forwards;
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
-    .hero-cta {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--white-warm);
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--brown-deep);
+      color: var(--cream);
       padding: 1rem 2.5rem;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1rem;
       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      opacity: 0;
-      animation: fadeSlideUp 0.8s ease 0.8s forwards;
+      border: 2px solid var(--brown-deep);
     }
 
-    .hero-cta:hover {
-      background: var(--brown-deep);
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: var(--shadow-hover);
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px var(--shadow-hover);
     }
 
-    .hero-scroll {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      animation: fadeSlideUp 0.8s ease 1s forwards;
-    }
-
-    .hero-scroll span {
-      display: block;
-      width: 24px;
-      height: 40px;
-      border: 2px solid var(--brown-mid);
-      border-radius: 12px;
-      position: relative;
-    }
-
-    .hero-scroll span::before {
-      content: '';
-      position: absolute;
-      top: 8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 4px;
-      height: 8px;
-      background: var(--brown-mid);
-      border-radius: 2px;
-      animation: scrollDown 1.5s infinite;
-    }
-
-    @keyframes scrollDown {
-      0%, 100% { opacity: 1; top: 8px; }
-      50% { opacity: 0.5; top: 16px; }
-    }
-
-    @keyframes fadeSlideUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* SECTION DIVIDER */
-    .section-divider {
-      width: 100%;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .section-divider svg {
-      width: 300px;
-      height: 30px;
-      fill: var(--accent-light);
-    }
-
-    /* ABOUT */
-    .about {
-      padding: 5rem 2rem;
-      background: var(--white-warm);
-      text-align: center;
-    }
-
-    .about h2 {
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      margin-bottom: 1.5rem;
-      color: var(--brown-deep);
-    }
-
-    .about-text {
-      max-width: 700px;
-      margin: 0 auto 2.5rem;
-      font-size: 1.15rem;
-      color: var(--text-mid);
-      line-height: 1.8;
-    }
-
-    .about-icons {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .about-icon {
-      display: flex;
-      flex-direction: column;
+    .btn-secondary {
+      display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-    }
-
-    .about-icon span {
-      font-size: 3rem;
-    }
-
-    .about-icon small {
-      font-size: 0.9rem;
-      color: var(--text-mid);
-      font-weight: 500;
-    }
-
-    /* CATÁLOGO */
-    .catalog {
-      padding: 5rem 2rem;
-      background: var(--cream);
-    }
-
-    .catalog h2 {
-      text-align: center;
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      margin-bottom: 0.5rem;
+      background: transparent;
       color: var(--brown-deep);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s;
+      border: 2px solid var(--brown-deep);
     }
 
-    .catalog-subtitle {
+    .btn-secondary:hover {
+      background: var(--brown-deep);
+      color: var(--cream);
+      transform: translateY(-3px);
+    }
+
+    /* ORNAMENT */
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .ornament-line {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .ornament-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    /* PRODUCTS */
+    .products {
+      padding: 6rem 2rem;
+      background: var(--warm-white);
+    }
+
+    .section-header {
       text-align: center;
-      font-family: var(--font-display);
-      font-style: italic;
-      color: var(--text-mid);
-      margin-bottom: 3rem;
-    }
-
-    .category {
       margin-bottom: 4rem;
     }
 
-    .category h3 {
-      font-size: 1.6rem;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      text-align: center;
-      font-weight: 500;
-      letter-spacing: 2px;
+    .section-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      color: var(--brown-deep);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--text-secondary);
     }
 
     .products-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .product-card {
-      background: var(--white-warm);
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: var(--shadow);
-      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      border-left: 3px solid transparent;
+      background: var(--cream);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border: 1px solid var(--divider);
     }
 
     .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-left-color: var(--accent);
-    }
-
-    .product-emoji {
-      font-size: 64px;
-      text-align: center;
-      margin-bottom: 1rem;
-      line-height: 1;
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px var(--shadow-hover);
+      border-color: var(--gold-light);
     }
 
     .product-img {
       width: 100%;
-      height: 180px;
+      height: 240px;
       object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 1rem;
+      background: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-img span {
+      font-size: 5rem;
+    }
+
+    .product-content {
+      padding: 1.5rem;
+      text-align: center;
     }
 
     .product-name {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 600;
+      font-size: 1.5rem;
       color: var(--brown-deep);
       margin-bottom: 0.5rem;
     }
 
     .product-desc {
       font-size: 0.95rem;
-      color: var(--text-mid);
+      color: var(--text-muted);
       font-style: italic;
       margin-bottom: 1rem;
-      line-height: 1.5;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .product-price {
-      font-size: 22px;
+      font-size: 1.4rem;
       font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 1rem;
+      color: var(--gold-dark);
     }
 
-    .product-actions {
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .qty-selector {
-      display: flex;
-      align-items: center;
-      background: var(--cream);
-      border-radius: 25px;
-      padding: 0.25rem;
-    }
-
-    .qty-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+    .product-btn {
+      background: var(--brown-deep);
+      color: var(--cream);
       border: none;
-      background: var(--white-warm);
-      color: var(--brown-deep);
-      font-size: 1.3rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
       cursor: pointer;
-      transition: all 0.2s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+
+    .product-btn:hover {
+      background: var(--gold-dark);
+    }
+
+    .product-btn.added {
+      background: var(--success);
+    }
+
+    /* VALOR */
+    .valor {
+      padding: 6rem 2rem;
+      background: var(--cream);
+    }
+
+    .valor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .valor-item {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .valor-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      background: var(--gold-light);
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .qty-btn:hover {
-      background: var(--accent);
-      color: var(--white-warm);
+    .valor-icon span {
+      font-size: 2.5rem;
     }
 
-    .qty-display {
-      min-width: 36px;
-      text-align: center;
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
-    .add-btn {
-      flex: 1;
-      min-width: 140px;
-      background: var(--accent);
-      color: var(--white-warm);
-      border: none;
-      padding: 0.8rem 1.2rem;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.3s;
-      white-space: nowrap;
-    }
-
-    .add-btn:hover {
-      background: var(--brown-deep);
-    }
-
-    .add-btn.added {
-      background: var(--success);
-      transform: scale(1.05);
-    }
-
-    /* GALLERY */
-    .gallery {
-      padding: 5rem 2rem;
-      background: var(--white-warm);
-    }
-
-    .gallery h2 {
-      text-align: center;
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      margin-bottom: 2rem;
+    .valor-title {
+      font-size: 1.3rem;
       color: var(--brown-deep);
+      margin-bottom: 0.5rem;
     }
 
-    .gallery-grid {
+    .valor-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* LIFESTYLE */
+    .lifestyle {
+      padding: 6rem 2rem;
+      background: var(--warm-white);
+    }
+
+    .lifestyle-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      max-width: 1000px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+    }
+
+    .lifestyle-img {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lifestyle-img span {
+      font-size: 6rem;
+      opacity: 0.5;
+    }
+
+    .lifestyle-text {
+      text-align: center;
+      max-width: 600px;
       margin: 0 auto;
     }
 
-    .gallery-item {
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
+    .lifestyle-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.6rem;
+      color: var(--brown-deep);
+      line-height: 1.5;
     }
 
-    .gallery-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.3s;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-
-    /* CÓMO FUNCIONA */
-    .how-it-works {
-      padding: 5rem 2rem;
+    /* TESTIMONIALS */
+    .testimonials {
+      padding: 6rem 2rem;
       background: var(--brown-deep);
       color: var(--cream);
-      text-align: center;
     }
 
-    .how-it-works h2 {
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      margin-bottom: 3rem;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .step {
-      position: relative;
-      padding: 2rem;
-    }
-
-    .step-number {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: var(--font-display);
-      font-size: 8rem;
-      font-weight: 600;
-      color: var(--accent-light);
-      opacity: 0.15;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .step-icon {
-      position: relative;
-      z-index: 1;
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 1rem;
-    }
-
-    .step-icon svg {
-      width: 100%;
-      height: 100%;
-      stroke: var(--accent);
-      stroke-width: 1.5;
-      fill: none;
-    }
-
-    .step-title {
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-      position: relative;
-      z-index: 1;
-    }
-
-    .step-desc {
-      font-size: 0.95rem;
-      opacity: 0.8;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* TESTIMONIOS */
-    .testimonials {
-      padding: 5rem 2rem;
-      background: linear-gradient(135deg, var(--brown-mid) 0%, var(--brown-deep) 100%);
-      text-align: center;
-    }
-
-    .testimonials h2 {
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      margin-bottom: 3rem;
+    .testimonials .section-title {
       color: var(--cream);
     }
 
@@ -621,125 +480,143 @@
     }
 
     .testimonial-card {
-      background: var(--brown-deep);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 20px;
       padding: 2rem;
-      text-align: left;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .testimonial-quote {
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      font-family: var(--font-display);
-      font-size: 6rem;
-      color: var(--accent-light);
-      opacity: 0.2;
-      line-height: 1;
+      text-align: center;
     }
 
     .testimonial-stars {
-      color: #F0C050;
+      color: var(--gold);
       font-size: 1.2rem;
       margin-bottom: 1rem;
-      position: relative;
-      z-index: 1;
     }
 
     .testimonial-text {
       font-style: italic;
       color: var(--cream);
-      margin-bottom: 1.5rem;
       line-height: 1.7;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
     }
 
     .testimonial-author {
       font-family: var(--font-display);
       font-style: italic;
-      font-weight: 500;
-      color: var(--white-warm);
       font-size: 1.1rem;
-      position: relative;
-      z-index: 1;
+      color: var(--gold);
     }
 
-    .testimonial-location {
-      font-size: 0.85rem;
-      color: var(--accent-light);
-      margin-top: 0.25rem;
+    /* CTA */
+    .cta {
+      padding: 8rem 2rem;
+      text-align: center;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--gold-light) 100%);
+    }
+
+    .cta-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--brown-deep);
+      margin-bottom: 1rem;
+    }
+
+    .cta-text {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #25D366;
+      color: white;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
     }
 
     /* FOOTER */
     .footer {
-      padding: 4rem 2rem;
+      padding: 3rem 2rem;
       background: var(--brown-deep);
       color: var(--cream);
       text-align: center;
+      opacity: 0.8;
     }
 
     .footer-logo {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
       font-family: var(--font-display);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .footer-bear {
-      font-size: 2rem;
-    }
-
-    .footer-tagline {
-      font-style: italic;
-      margin-bottom: 2rem;
-      opacity: 0.85;
-    }
-
-    .footer-info {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-info span {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--gold);
     }
 
     .footer-social {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     .footer-social a {
       color: var(--cream);
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       transition: color 0.3s;
     }
 
     .footer-social a:hover {
-      color: var(--accent);
+      color: var(--gold);
     }
 
     .footer-copy {
       font-size: 0.85rem;
-      opacity: 0.5;
+      opacity: 0.6;
     }
 
-    /* CART PANEL */
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      width: 64px;
+      height: 64px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+
+    /* CART */
     .cart-overlay {
       position: fixed;
       inset: 0;
@@ -762,7 +639,7 @@
       width: 100%;
       max-width: 420px;
       height: 100%;
-      background: var(--white-warm);
+      background: var(--warm-white);
       z-index: 2001;
       transform: translateX(100%);
       transition: transform 0.4s ease;
@@ -783,17 +660,12 @@
       align-items: center;
     }
 
-    .cart-header h3 {
-      font-size: 1.5rem;
-    }
-
     .cart-close {
       background: none;
       border: none;
       color: var(--cream);
       font-size: 2rem;
       cursor: pointer;
-      line-height: 1;
     }
 
     .cart-items {
@@ -805,21 +677,15 @@
     .cart-empty {
       text-align: center;
       padding: 3rem 1rem;
-      color: var(--text-mid);
-    }
-
-    .cart-empty span {
-      font-size: 4rem;
-      display: block;
-      margin-bottom: 1rem;
+      color: var(--text-muted);
     }
 
     .cart-item {
       display: flex;
-      gap: 1rem;
-      padding: 1rem;
-      border-bottom: 1px solid var(--cream);
+      justify-content: space-between;
       align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--divider);
     }
 
     .cart-item-info {
@@ -828,19 +694,18 @@
 
     .cart-item-name {
       font-family: var(--font-display);
-      font-weight: 600;
+      font-weight: 500;
       color: var(--brown-deep);
-      font-size: 1.1rem;
     }
 
     .cart-item-price {
       font-size: 0.9rem;
-      color: var(--accent);
+      color: var(--gold-dark);
     }
 
     .cart-item-qty {
       font-size: 0.85rem;
-      color: var(--text-mid);
+      color: var(--text-muted);
     }
 
     .cart-item-remove {
@@ -854,23 +719,20 @@
 
     .cart-footer {
       padding: 1.5rem;
-      border-top: 2px solid var(--cream);
+      border-top: 2px solid var(--divider);
     }
 
     .cart-total {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
       font-size: 1.3rem;
       font-weight: 700;
       color: var(--brown-deep);
+      margin-bottom: 1rem;
     }
 
     .cart-total-price {
-      color: var(--accent);
-      font-family: var(--font-display);
-      font-size: 1.5rem;
+      color: var(--gold-dark);
     }
 
     .cart-form {
@@ -883,24 +745,19 @@
     .cart-textarea {
       width: 100%;
       padding: 0.9rem 1rem;
-      border: 2px solid var(--cream);
+      border: 2px solid var(--divider);
       border-radius: 12px;
       font-size: 1rem;
       font-family: var(--font-body);
-      transition: border-color 0.3s;
       background: var(--cream);
-      color: var(--text-dark);
+      color: var(--text-primary);
+      transition: border-color 0.3s;
     }
 
     .cart-input:focus,
     .cart-textarea:focus {
       outline: none;
-      border-color: var(--accent);
-    }
-
-    .cart-input::placeholder,
-    .cart-textarea::placeholder {
-      color: var(--text-mid);
+      border-color: var(--gold);
     }
 
     .cart-textarea {
@@ -910,9 +767,9 @@
 
     .whatsapp-btn {
       background: #25D366;
-      color: var(--white-warm);
+      color: white;
       border: none;
-      padding: 1rem 2rem;
+      padding: 1rem;
       border-radius: 50px;
       font-size: 1.1rem;
       font-weight: 600;
@@ -922,118 +779,63 @@
       justify-content: center;
       gap: 0.5rem;
       transition: all 0.3s;
-      font-family: var(--font-body);
     }
 
     .whatsapp-btn:hover {
       background: #1DA851;
-      transform: translateY(-2px);
-    }
-
-    .whatsapp-btn svg {
-      width: 24px;
-      height: 24px;
-    }
-
-    /* FLOATING WHATSAPP */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      left: 24px;
-      z-index: 999;
-      width: 60px;
-      height: 60px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
-    }
-
-    .whatsapp-float svg {
-      width: 32px;
-      height: 32px;
-      fill: var(--white-warm);
     }
 
     /* MOBILE */
     @media (max-width: 768px) {
       .nav {
-        padding: 0.8rem 1rem;
-        background: var(--brown-deep);
+        padding: 1rem;
       }
 
-      .nav-logo {
-        color: var(--cream);
-        font-size: 1.2rem;
+      .nav-links {
+        gap: 1rem;
       }
 
-      .nav-cart svg {
-        stroke: var(--cream);
+      .nav-links a:not(.nav-cta) {
+        display: none;
       }
 
       .hero {
-        padding: 100px 1.5rem 60px;
+        padding: 80px 1.5rem 40px;
       }
 
-      .hero-bear {
-        font-size: 80px;
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
       }
 
       .products-grid {
         grid-template-columns: 1fr;
       }
 
-      .gallery-grid {
+      .lifestyle-grid {
         grid-template-columns: 1fr;
-      }
-
-      .steps {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .step {
-        padding: 1.5rem;
-      }
-
-      .step-number {
-        font-size: 5rem;
       }
 
       .testimonials-grid {
         grid-template-columns: 1fr;
       }
 
-      .cart-panel {
-        max-width: 100%;
-      }
-
       .whatsapp-float {
-        bottom: 20px;
-        left: 20px;
+        bottom: 1.5rem;
+        right: 1.5rem;
         width: 56px;
         height: 56px;
       }
-
-      .about-icons {
-        gap: 1.5rem;
-      }
-
-      .footer-info span {
-        flex-direction: column;
-        gap: 0.2rem;
-      }
     }
 
+    /* Animations */
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -1044,221 +846,164 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    :root {
+      --success: #4A8C59;
+    }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
-  <nav class="nav scrolled" id="nav">
-    <a href="#" class="nav-logo">
-      <span class="nav-logo-bear">🐻</span>
-      <span>Kuchen Trujen</span>
-    </a>
-    <button class="nav-cart" onclick="toggleCart()">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
-        <circle cx="9" cy="21" r="1"></circle>
-        <circle cx="20" cy="21" r="1"></circle>
-        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-      </svg>
-      <span class="nav-cart-badge" id="navCartBadge">0</span>
-    </button>
+  <nav class="nav">
+    <a href="#" class="nav-logo">Kuchen Trujen</a>
+    <div class="nav-links">
+      <a href="#sabores">Sabores</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#" onclick="toggleCart(); return false;" class="nav-cta">🛒 Carrito</a>
+    </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <div class="hero-bear">🐻</div>
+      <span class="hero-tag">Cuenca, Ecuador</span>
       <h1 class="hero-title">Kuchen Trujen</h1>
-      <p class="hero-tagline">Receta especial</p>
-      <p class="hero-products">Kuchen · Pie · Cookies</p>
-      <a href="#catalog" class="hero-cta">Ver nuestros sabores</a>
-    </div>
-    <div class="hero-scroll">
-      <span></span>
-    </div>
-  </section>
+      <p class="hero-subtitle">Receta especial de familia, horneada con cariño</p>
+      <p class="hero-tagline">Cada mordida, un recuerdo</p>
+      
+      <div class="hero-buttons">
+        <a href="#sabores" class="btn-primary">Ver Sabores</a>
+        <a href="#" onclick="sendWhatsAppDirect(); return false;" class="btn-secondary">💬 Ordenar por WhatsApp</a>
+      </div>
 
-  <!-- ABOUT -->
-  <section class="about fade-in" id="about">
-    <h2>Nuestra Historia</h2>
-    <p class="about-text">
-      En el corazón de Cuenca, nacimos del amor por la pastelería artesanal. 
-      Cada kuchen, pie y cookie es elaborado a mano con ingredientes selecionados 
-      y esa receta especial que solo el cariño puede dar. Como dice nuestro oso: 
-      <strong>"Hecho con amor"</strong>.
-    </p>
-    <div class="about-icons">
-      <div class="about-icon">
-        <span>🥧</span>
-        <small>Kuchenes Alemanes</small>
-      </div>
-      <div class="about-icon">
-        <span>🍪</span>
-        <small>Cookies Artesanales</small>
-      </div>
-      <div class="about-icon">
-        <span>💛</span>
-        <small>Hecho con Amor</small>
+      <div class="ornament">
+        <div class="ornament-line"></div>
+        <div class="ornament-dot"></div>
+        <div class="ornament-line"></div>
       </div>
     </div>
   </section>
 
-  <!-- CATÁLOGO -->
-  <section class="catalog fade-in" id="catalog">
-    <h2>Nuestros Sabores</h2>
-    <p class="catalog-subtitle">Tradición alemana, corazón cuencano</p>
-
-    <div class="category">
-      <h3>~ Kuchenes ~</h3>
-      <div class="products-grid" id="kuchenGrid"></div>
+  <!-- PRODUCTS -->
+  <section class="products" id="sabores">
+    <div class="section-header">
+      <span class="section-tag">Delicia artesanal</span>
+      <h2 class="section-title">Nuestros Sabores</h2>
+      <p class="section-subtitle">Tradición que se siente en cada capa</p>
     </div>
 
-    <div class="category">
-      <h3>~ Pies ~</h3>
-      <div class="products-grid" id="piesGrid"></div>
-    </div>
-
-    <div class="category">
-      <h3>~ Cookies ~</h3>
-      <div class="products-grid" id="cookiesGrid"></div>
-    </div>
+    <div class="products-grid" id="productsGrid"></div>
   </section>
 
-  <!-- GALLERY -->
-  <section class="gallery fade-in" id="gallery">
-    <h2>Nuestros Productos</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400" alt="Kuchen de nueces" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=400" alt="Pie de frutas" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400" alt="Cookies artesanales" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400" alt="Tarta de frutas" loading="lazy">
-      </div>
+  <!-- VALOR -->
+  <section class="valor" id="nosotros">
+    <div class="section-header">
+      <span class="section-tag">¿Por qué nosotros?</span>
+      <h2 class="section-title">Hecho con amor</h2>
     </div>
-  </section>
 
-  <!-- CÓMO FUNCIONA -->
-  <section class="how-it-works fade-in" id="how">
-    <h2>¿Cómo Funciona?</h2>
-    <div class="steps">
-      <div class="step">
-        <span class="step-number">01</span>
-        <div class="step-icon">
-          <svg viewBox="0 0 80 80">
-            <circle cx="40" cy="35" r="20" stroke-width="2"/>
-            <circle cx="35" cy="32" r="5" fill="var(--accent)" stroke="none"/>
-            <circle cx="45" cy="32" r="5" fill="var(--accent)" stroke="none"/>
-            <path d="M32 42 Q40 48, 48 42" stroke-width="2"/>
-            <path d="M40 55 L40 70 M30 62 L50 62" stroke-width="2"/>
-          </svg>
-        </div>
-        <h4 class="step-title">Elige</h4>
-        <p class="step-desc">Navega nuestro catálogo y selecciona los sabores que más te tenten.</p>
+    <div class="valor-grid">
+      <div class="valor-item fade-in">
+        <div class="valor-icon"><span>🎂</span></div>
+        <h3 class="valor-title">Artesanal</h3>
+        <p class="valor-desc">Horneado a mano, como en casa de la abuela. Cada pieza es única.</p>
       </div>
-      <div class="step">
-        <span class="step-number">02</span>
-        <div class="step-icon">
-          <svg viewBox="0 0 80 80">
-            <rect x="20" y="15" width="40" height="50" rx="3" stroke-width="2"/>
-            <line x1="28" y1="28" x2="52" y2="28" stroke-width="2"/>
-            <line x1="28" y1="38" x2="48" y2="38" stroke-width="2"/>
-            <line x1="28" y1="48" x2="44" y2="48" stroke-width="2"/>
-          </svg>
-        </div>
-        <h4 class="step-title">Personaliza</h4>
-        <p class="step-desc">Elige cantidades y agrégale una nota especial para tu pedido.</p>
+      <div class="valor-item fade-in">
+        <div class="valor-icon"><span>🌿</span></div>
+        <h3 class="valor-title">Ingredientes selectos</h3>
+        <p class="valor-desc">Solo lo mejor llega a tu mesa. Calidad que se nota.</p>
       </div>
-      <div class="step">
-        <span class="step-number">03</span>
-        <div class="step-icon">
-          <svg viewBox="0 0 80 80">
-            <rect x="15" y="25" width="50" height="35" rx="3" stroke-width="2"/>
-            <path d="M25 25 L25 20 Q40 10, 55 20 L55 25" stroke-width="2"/>
-            <line x1="15" y1="35" x2="65" y2="35" stroke-width="1.5"/>
-            <rect x="35" y="45" width="10" height="15" fill="var(--accent)" stroke="none"/>
-          </svg>
-        </div>
-        <h4 class="step-title">Recibe en Cuenca</h4>
-        <p class="step-desc">Te lo llevamos a tu puerta. ¡Fresco y delicioso!</p>
+      <div class="valor-item fade-in">
+        <div class="valor-icon"><span>🎁</span></div>
+        <h3 class="valor-title">Ideal para regalo</h3>
+        <p class="valor-desc">Empaque elegante, sonrisa garantizada. El detalle perfecto.</p>
+      </div>
+      <div class="valor-item fade-in">
+        <div class="valor-icon"><span>🚚</span></div>
+        <h3 class="valor-title">Entrega en Cuenca</h3>
+        <p class="valor-desc">Fresco en tu puerta. Te lo llevamos con cariño.</p>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIOS -->
-  <section class="testimonials fade-in" id="testimonials">
-    <h2>Lo Que Dicen Nuestros Clientes</h2>
+  <!-- LIFESTYLE -->
+  <section class="lifestyle">
+    <div class="section-header">
+      <span class="section-tag">Momentos especiales</span>
+      <h2 class="section-title">Cada momento merece un kuchen</h2>
+    </div>
+
+    <div class="lifestyle-grid">
+      <div class="lifestyle-img"><span>🎂</span></div>
+      <div class="lifestyle-img"><span>☕</span></div>
+    </div>
+
+    <div class="lifestyle-text">
+      <p class="lifestyle-quote">"Un kuchen compartido es un momento que se queda en el corazón"</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-header">
+      <span class="section-tag" style="color: var(--gold);">Lo que dicen</span>
+      <h2 class="section-title">Nuestros clientes</h2>
+    </div>
+
     <div class="testimonials-grid">
       <div class="testimonial-card">
-        <span class="testimonial-quote">"</span>
         <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">
-          "El kuchen de ciruela es espectacular. Me recuerda a los que hacía mi abuela 
-          alemana. Y la presentación con el oso es adorable."
-        </p>
+        <p class="testimonial-text">"El kuchen de ciruela es espectacular. Me recuerda a los que hacía mi abuela alemana. Y el empaque es hermoso."</p>
         <p class="testimonial-author">Sofia Wegmann</p>
-        <p class="testimonial-location">Cuenca, Ecuador</p>
       </div>
       <div class="testimonial-card">
-        <span class="testimonial-quote">"</span>
         <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">
-          "Pedí cookies para el cumpleaños de mi hija y fueron la sensación. 
-          ¡Ya es tradición en casa! El kuchen trujen es genial."
-        </p>
-        <p class="testimonial-author">María José Espinoza</p>
-        <p class="testimonial-location">El Ejido, Cuenca</p>
+        <p class="testimonial-text">"Pedí para el cumpleaños de mi mamá y fue la sensación. Ya es tradición en casa. ¡100% recomendado!"</p>
+        <p class="testimonial-author">María José E.</p>
       </div>
       <div class="testimonial-card">
-        <span class="testimonial-quote">"</span>
         <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">
-          "El pie de nueces es una obra de arte. Y saber que todo es hecho con amor 
-          se nota en cada mordida. ¡100% recomendado!"
-        </p>
+        <p class="testimonial-text">"El regalo perfecto para mis suegros. El sabor es increíble y llega perfecto a la puerta."</p>
         <p class="testimonial-author">Andrés Córdova</p>
-        <p class="testimonial-location">San Sebastián, Cuenca</p>
       </div>
     </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2 class="cta-title">Tu momento especial nos inspira</h2>
+    <p class="cta-text">Cada kuchen cuenta una historia. ¿Cuál quieres contar hoy?</p>
+    <a href="#" onclick="sendWhatsAppDirect(); return false;" class="cta-btn">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Ordenar por WhatsApp
+    </a>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <h2 class="footer-logo">
-      <span class="footer-bear">🐻</span>
-      Kuchen Trujen
-    </h2>
-    <p class="footer-tagline">Kuchen, Pies y Cookies | Cuenca, Ecuador 🇪🇨</p>
-    <div class="footer-info">
-      <span>🕐 Lunes a Sábado: 8:00 - 19:00</span>
-      <span>📱 WhatsApp: +593 XX XXX XXXX</span>
-      <span>📍 Entregas en Cuenca</span>
-      <span>📸 @kuchentrujen</span>
-    </div>
+    <p class="footer-logo">Kuchen Trujen</p>
     <div class="footer-social">
       <a href="https://instagram.com/kuchentrujen" target="_blank">📸 @kuchentrujen</a>
+      <span>•</span>
+      <span>📍 Cuenca, Ecuador</span>
     </div>
     <p class="footer-copy">© 2026 Kuchen Trujen. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- CART -->
+  <!-- CART OVERLAY -->
   <div class="cart-overlay" onclick="toggleCart()"></div>
+
+  <!-- CART PANEL -->
   <div class="cart-panel" id="cartPanel">
     <div class="cart-header">
-      <h3>🐻 Tu Pedido</h3>
+      <h3>🛒 Tu Pedido</h3>
       <button class="cart-close" onclick="toggleCart()">&times;</button>
     </div>
     <div class="cart-items" id="cartItems">
-      <div class="cart-empty">
-        <span>🐻</span>
-        <p>Tu carrito está vacío</p>
-        <p style="font-size: 0.9rem; margin-top: 0.5rem;">¡Explora nuestros sabores!</p>
-      </div>
+      <div class="cart-empty">Tu carrito está vacío</div>
     </div>
     <div class="cart-footer" id="cartFooter" style="display: none;">
       <div class="cart-total">
@@ -1266,157 +1011,107 @@
         <span class="cart-total-price" id="cartTotal">$0.00</span>
       </div>
       <div class="cart-form">
-        <input type="text" class="cart-input" id="cartAddress" placeholder="¿A qué sector de Cuenca entregamos?">
-        <textarea class="cart-textarea" id="cartNote" placeholder="Nota especial 📝 (Ej: Sin azúcar, dedicatoria...)"></textarea>
+        <input type="text" class="cart-input" id="cartAddress" placeholder="¿A qué sector de Cuenca?">
+        <textarea class="cart-textarea" id="cartNote" placeholder="Nota especial (opcional)"></textarea>
         <button class="whatsapp-btn" onclick="sendWhatsApp()">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          Enviar pedido por WhatsApp 🐻
+          📱 Enviar por WhatsApp
         </button>
       </div>
     </div>
   </div>
 
   <!-- FLOATING WHATSAPP -->
-  <a href="https://wa.me/593XXXXXXXXX" target="_blank" class="whatsapp-float" title="Escríbenos por WhatsApp">
+  <a href="#" onclick="sendWhatsAppDirect(); return false;" class="whatsapp-float" title="Ordenar por WhatsApp">
     <svg viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
   </a>
 
   <script>
-    const WHATSAPP_NUMBER = '593XXXXXXXXX';
+    const WHATSAPP = '593XXXXXXXXX';
 
-    const products = {
-      kuchen: [
-        { id: 'kuchen-ciruela', name: 'Kuchen de Ciruela', desc: 'Ciruelas rojas del Valle Andino', price: 9.50, emoji: '🍑' },
-        { id: 'kuchen-durazno', name: 'Kuchen de Durazno', desc: 'Sol y dulzura de temporada', price: 9.00, emoji: '🍑' },
-        { id: 'kuchen-queso-mora', name: 'Kuchen de Queso con Mora', desc: 'Queso fresco y mora serrana', price: 10.00, emoji: '🧀' },
-        { id: 'kuchen-manzana', name: 'Kuchen de Manzana Canela', desc: 'La combinación que nunca falla', price: 9.50, emoji: '🍎' }
-      ],
-      pies: [
-        { id: 'pie-nueces', name: 'Pie de Nueces', desc: 'Nueces de三峡 con caramelo dorado', price: 10.50, emoji: '🥜' },
-        { id: 'pie-manzana', name: 'Pie de Manzana', desc: 'Manzanas del Valle con canela', price: 8.50, emoji: '🍎' },
-        { id: 'pie-berries', name: 'Pie de Berries', desc: 'Mix de berries frescos con lattice', price: 9.50, emoji: '🫐' },
-        { id: 'pie-chocolate', name: 'Pie de Chocolate', desc: 'Cacao artesanal 70% cacao', price: 9.00, emoji: '🍫' }
-      ],
-      cookies: [
-        { id: 'cookie-chocolate', name: 'Cookie de Chocolate', desc: 'Chunks de chocolate belga', price: 4.50, emoji: '🍪' },
-        { id: 'cookie-avena', name: 'Cookie de Avena', desc: 'Avena con pasas y canela', price: 4.00, emoji: '🥣' },
-        { id: 'cookie-mantequilla', name: 'Cookie de Mantequilla', desc: 'Clásico, derretido por dentro', price: 3.50, emoji: '🧈' },
-        { id: 'alfajores', name: 'Alfajores', desc: 'Dulce de leche y coco rallado', price: 5.00, emoji: '🥠' }
-      ]
-    };
+    const products = [
+      { id: 'kuchen-ciruela', name: 'Kuchen de Ciruela', desc: 'Ciruelas rojas del Valle Andino', price: 9.50, emoji: '🍑' },
+      { id: 'kuchen-durazno', name: 'Kuchen de Durazno', desc: 'Sol y dulzura de temporada', price: 9.00, emoji: '🍑' },
+      { id: 'kuchen-queso', name: 'Kuchen de Queso con Mora', desc: 'Queso fresco y mora serrana', price: 10.00, emoji: '🧀' },
+      { id: 'kuchen-manzana', name: 'Kuchen de Manzana', desc: 'La combinación que nunca falla', price: 9.50, emoji: '🍎' },
+      { id: 'pie-nueces', name: 'Pie de Nueces', desc: 'Nueces con caramelo dorado', price: 10.50, emoji: '🥜' },
+      { id: 'pie-manzana', name: 'Pie de Manzana', desc: 'Manzanas con canela', price: 8.50, emoji: '🍎' },
+      { id: 'cookie-choc', name: 'Cookie de Chocolate', desc: 'Chunks de chocolate belga', price: 4.50, emoji: '🍪' },
+      { id: 'alfajores', name: 'Alfajores', desc: 'Dulce de leche y coco', price: 5.00, emoji: '🥠' },
+    ];
 
     let cart = [];
 
     function renderProducts() {
-      document.getElementById('kuchenGrid').innerHTML = products.kuchen.map(p => createProductCard(p)).join('');
-      document.getElementById('piesGrid').innerHTML = products.pies.map(p => createProductCard(p)).join('');
-      document.getElementById('cookiesGrid').innerHTML = products.cookies.map(p => createProductCard(p)).join('');
-    }
-
-    function createProductCard(product) {
-      const qty = getCartQty(product.id);
-      return `
+      const grid = document.getElementById('productsGrid');
+      grid.innerHTML = products.map(p => `
         <div class="product-card">
-          <div class="product-emoji">${product.emoji}</div>
-          <h4 class="product-name">${product.name}</h4>
-          <p class="product-desc">${product.desc}</p>
-          <p class="product-price">$${product.price.toFixed(2)}</p>
-          <div class="product-actions">
-            <div class="qty-selector">
-              <button class="qty-btn" onclick="updateQty('${product.id}', -1)">−</button>
-              <span class="qty-display" id="qty-${product.id}">${qty}</span>
-              <button class="qty-btn" onclick="updateQty('${product.id}', 1)">+</button>
+          <div class="product-img"><span>${p.emoji}</span></div>
+          <div class="product-content">
+            <h3 class="product-name">${p.name}</h3>
+            <p class="product-desc">${p.desc}</p>
+            <div class="product-footer">
+              <span class="product-price">$${p.price.toFixed(2)}</span>
+              <button class="product-btn" id="btn-${p.id}" onclick="addToCart('${p.id}')">
+                ${getCartQty(p.id) > 0 ? `✓ (${getCartQty(p.id)})` : 'Pedir'}
+              </button>
             </div>
-            <button class="add-btn ${qty > 0 ? 'added' : ''}" id="btn-${product.id}" onclick="addToCart('${product.id}')">
-              ${qty > 0 ? '✓ Agregado' : '+ Agregar'}
-            </button>
           </div>
         </div>
-      `;
+      `).join('');
     }
 
-    function getCartQty(productId) {
-      const item = cart.find(i => i.id === productId);
+    function getCartQty(id) {
+      const item = cart.find(i => i.id === id);
       return item ? item.qty : 0;
     }
 
-    function getProduct(productId) {
-      return [...products.kuchen, ...products.pies, ...products.cookies].find(p => p.id === productId);
+    function getProduct(id) {
+      return products.find(p => p.id === id);
     }
 
-    function updateQty(productId, delta) {
-      const existing = cart.find(i => i.id === productId);
+    function addToCart(id) {
+      const existing = cart.find(i => i.id === id);
       if (existing) {
-        existing.qty = Math.max(0, existing.qty + delta);
-        if (existing.qty === 0) cart = cart.filter(i => i.id !== productId);
-      } else if (delta > 0) {
-        const product = getProduct(productId);
-        cart.push({ id: productId, name: product.name, price: product.price, qty: 1 });
+        existing.qty++;
+      } else {
+        const p = getProduct(id);
+        cart.push({ id: p.id, name: p.name, price: p.price, qty: 1 });
       }
       renderProducts();
       updateCartUI();
-    }
-
-    function addToCart(productId) {
-      const existing = cart.find(i => i.id === productId);
-      if (existing) existing.qty++;
-      else {
-        const product = getProduct(productId);
-        cart.push({ id: productId, name: product.name, price: product.price, qty: 1 });
-      }
       
-      const btn = document.getElementById(`btn-${productId}`);
+      const btn = document.getElementById(`btn-${id}`);
       btn.classList.add('added');
-      btn.textContent = '✓ Agregado';
-      setTimeout(() => {
-        btn.classList.remove('added');
-        btn.textContent = '+ Agregar';
-      }, 1500);
-
-      renderProducts();
-      updateCartUI();
+      setTimeout(() => btn.classList.remove('added'), 1500);
     }
 
     function updateCartUI() {
-      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
-      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-
-      document.getElementById('navCartBadge').textContent = totalItems;
-
-      const cartItems = document.getElementById('cartItems');
-      const cartFooter = document.getElementById('cartFooter');
+      const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+      const items = document.getElementById('cartItems');
+      const footer = document.getElementById('cartFooter');
 
       if (cart.length === 0) {
-        cartItems.innerHTML = `
-          <div class="cart-empty">
-            <span>🐻</span>
-            <p>Tu carrito está vacío</p>
-            <p style="font-size: 0.9rem; margin-top: 0.5rem;">¡Explora nuestros sabores!</p>
-          </div>
-        `;
-        cartFooter.style.display = 'none';
+        items.innerHTML = '<div class="cart-empty">Tu carrito está vacío</div>';
+        footer.style.display = 'none';
       } else {
-        cartItems.innerHTML = cart.map(item => `
+        items.innerHTML = cart.map(i => `
           <div class="cart-item">
             <div class="cart-item-info">
-              <div class="cart-item-name">${item.name}</div>
-              <div class="cart-item-price">$${item.price.toFixed(2)} c/u</div>
-              <div class="cart-item-qty">Cantidad: ${item.qty}</div>
+              <div class="cart-item-name">${i.name}</div>
+              <div class="cart-item-price">$${i.price.toFixed(2)} x ${i.qty}</div>
             </div>
-            <button class="cart-item-remove" onclick="removeFromCart('${item.id}')">🗑️</button>
+            <button class="cart-item-remove" onclick="removeFromCart('${i.id}')">×</button>
           </div>
         `).join('');
-        cartFooter.style.display = 'block';
-        document.getElementById('cartTotal').textContent = `$${totalPrice.toFixed(2)}`;
+        footer.style.display = 'block';
+        document.getElementById('cartTotal').textContent = `$${total.toFixed(2)}`;
       }
     }
 
-    function removeFromCart(productId) {
-      cart = cart.filter(i => i.id !== productId);
+    function removeFromCart(id) {
+      cart = cart.filter(i => i.id !== id);
       renderProducts();
       updateCartUI();
     }
@@ -1429,40 +1124,27 @@
     function sendWhatsApp() {
       const address = document.getElementById('cartAddress').value.trim();
       const note = document.getElementById('cartNote').value.trim();
+      const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
 
-      let message = `🐻 *Pedido - Kuchen Trujen*\n`;
-      message += `─────────────────\n`;
-
-      cart.forEach(item => {
-        const product = getProduct(item.id);
-        const emoji = product?.emoji || '🥧';
-        message += `${emoji} ${item.name} x${item.qty} — $${(item.price * item.qty).toFixed(2)}\n`;
+      let msg = `🎂 *Pedido - Kuchen Trujen*\n─────────────────\n`;
+      cart.forEach(i => {
+        msg += `${i.name} x${i.qty} — $${(i.price * i.qty).toFixed(2)}\n`;
       });
+      msg += `─────────────────\n💰 *Total: $${total.toFixed(2)}*\n`;
+      if (address) msg += `📍 Entrega: ${address}\n`;
+      if (note) msg += `📝 Nota: ${note}\n`;
+      msg += `\n¡Gracias por confiar! 🧡`;
 
-      const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-      message += `─────────────────\n`;
-      message += `💰 *Total: $${total.toFixed(2)}*\n`;
-
-      if (address) message += `📍 Entrega en: ${address}\n`;
-      if (note) message += `📝 Nota: ${note}\n`;
-
-      message += `\n¡Gracias por elegirnos! 🐻💛`;
-
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
-    // Nav scroll effect
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('nav');
-      if (window.pageYOffset > 80) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    });
+    function sendWhatsAppDirect() {
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('🎂 Hola! Quiero hacer un pedido de Kuchen Trujen 🧡')}`, '_blank');
+    }
 
     // Fade-in
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
+    const observer = new IntersectionObserver(e => {
+      e.forEach(el => { if (el.isIntersecting) el.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
