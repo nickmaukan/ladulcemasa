@@ -7,6 +7,7 @@
   <meta name="description" content="Kuchen artesanal horneado con recetas de familia en Cuenca, Ecuador. Ideal para regalos y momentos especiales. Encarga por WhatsApp.">
   <meta property="og:title" content="Kuchen Trujen | Kuchen Artesanal en Cuenca">
   <meta property="og:description" content="Receta especial de familia, horneada con cariño. El regalo perfecto.">
+  <meta property="og:image" content="https://nickmaukan.github.io/ladulcemasa/images/kuchen-trujen-box.jpg">
   <meta name="theme-color" content="#3D2B1F">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,840 +17,180 @@
     :root {
       --font-display: 'Cormorant Garamond', serif;
       --font-body: 'DM Sans', sans-serif;
-      
       --cream: #FAF7F2;
       --cream-light: #FDFCFA;
       --warm-white: #FFFCF9;
-      
       --brown-deep: #3D2B1F;
       --brown-mid: #6B4D3A;
       --brown-light: #8B6B52;
-      
       --gold: #C9A962;
       --gold-light: #E5D4A1;
       --gold-dark: #A68B3D;
-      
       --text-primary: #2C1F14;
       --text-secondary: #6B5D4D;
       --text-muted: #9B8B7A;
-      
       --divider: #E8E0D5;
       --shadow: rgba(61, 43, 31, 0.08);
       --shadow-hover: rgba(61, 43, 31, 0.15);
+      --success: #4A8C59;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font-body);
-      background-color: var(--cream);
-      color: var(--text-primary);
-      line-height: 1.6;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: var(--font-display);
-      font-weight: 500;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background-color: var(--cream); color: var(--text-primary); line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; }
 
     /* NAV */
     .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--warm-white);
-      border-bottom: 1px solid var(--divider);
-      transition: all 0.3s;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center;
+      background: var(--warm-white); border-bottom: 1px solid var(--divider);
     }
-
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--brown-deep);
-      text-decoration: none;
-      letter-spacing: 1px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color 0.3s;
-      font-weight: 500;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold-dark);
-    }
-
-    .nav-cta {
-      background: var(--brown-deep);
-      color: var(--cream) !important;
-      padding: 0.7rem 1.5rem;
-      border-radius: 50px;
-      transition: all 0.3s !important;
-    }
-
-    .nav-cta:hover {
-      background: var(--gold-dark) !important;
-      transform: translateY(-2px);
-    }
+    .nav-logo { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; color: var(--brown-deep); text-decoration: none; letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.95rem; color: var(--text-secondary); text-decoration: none; transition: color 0.3s; font-weight: 500; }
+    .nav-links a:hover { color: var(--gold-dark); }
+    .nav-cta { background: var(--brown-deep); color: var(--cream) !important; padding: 0.7rem 1.5rem; border-radius: 50px; transition: all 0.3s !important; }
+    .nav-cta:hover { background: var(--gold-dark) !important; transform: translateY(-2px); }
 
     /* HERO */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 100px 2rem 60px;
-      position: relative;
-      background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 50%, var(--gold-light) 100%);
-      overflow: hidden;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      padding: 100px 2rem 60px; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 100%);
     }
-
     .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 70%;
-      height: 150%;
-      background: radial-gradient(ellipse, var(--gold-light) 0%, transparent 70%);
-      opacity: 0.4;
-      z-index: 0;
+      content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%;
+      background: linear-gradient(180deg, var(--gold-light) 0%, transparent 100%); opacity: 0.3; z-index: 0;
     }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
+    .hero-img {
+      position: absolute; top: 50%; right: 5%; transform: translateY(-50%);
+      width: 45%; max-width: 550px; z-index: 1;
     }
-
-    .hero-tag {
-      display: inline-block;
-      font-size: 0.85rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold-dark);
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-    }
-
-    .hero-title {
-      font-size: clamp(3.5rem, 10vw, 6rem);
-      font-weight: 400;
-      color: var(--brown-deep);
-      margin-bottom: 1rem;
-      line-height: 1.1;
-    }
-
-    .hero-subtitle {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: clamp(1.3rem, 3vw, 1.8rem);
-      color: var(--text-secondary);
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-tagline {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      margin-bottom: 2.5rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--brown-deep);
-      color: var(--cream);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      border: 2px solid var(--brown-deep);
-    }
-
-    .btn-primary:hover {
-      background: var(--gold-dark);
-      border-color: var(--gold-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px var(--shadow-hover);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: transparent;
-      color: var(--brown-deep);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s;
-      border: 2px solid var(--brown-deep);
-    }
-
-    .btn-secondary:hover {
-      background: var(--brown-deep);
-      color: var(--cream);
-      transform: translateY(-3px);
-    }
-
-    /* ORNAMENT */
-    .ornament {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-
-    .ornament-line {
-      width: 60px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .ornament-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--gold);
-      border-radius: 50%;
-    }
+    .hero-img img { width: 100%; border-radius: 16px; box-shadow: 0 40px 80px rgba(61,43,31,0.2); }
+    .hero-content { position: relative; z-index: 2; max-width: 600px; text-align: left; }
+    .hero-tag { display: inline-block; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 1rem; font-weight: 600; }
+    .hero-title { font-size: clamp(3rem, 8vw, 5rem); font-weight: 400; color: var(--brown-deep); margin-bottom: 0.5rem; line-height: 1.1; }
+    .hero-subtitle { font-family: var(--font-display); font-style: italic; font-size: clamp(1.2rem, 2.5vw, 1.6rem); color: var(--text-secondary); margin-bottom: 1.5rem; }
+    .hero-tagline { font-size: 1rem; color: var(--text-muted); margin-bottom: 2rem; }
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--brown-deep); color: var(--cream); padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s; border: 2px solid var(--brown-deep); }
+    .btn-primary:hover { background: var(--gold-dark); border-color: var(--gold-dark); transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: var(--brown-deep); padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s; border: 2px solid var(--brown-deep); }
+    .btn-secondary:hover { background: var(--brown-deep); color: var(--cream); transform: translateY(-3px); }
 
     /* PRODUCTS */
-    .products {
-      padding: 6rem 2rem;
-      background: var(--warm-white);
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .section-tag {
-      display: inline-block;
-      font-size: 0.8rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold-dark);
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .section-title {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      color: var(--brown-deep);
-      margin-bottom: 1rem;
-    }
-
-    .section-subtitle {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .product-card {
-      background: var(--cream);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-      border: 1px solid var(--divider);
-    }
-
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 50px var(--shadow-hover);
-      border-color: var(--gold-light);
-    }
-
-    .product-img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      background: var(--gold-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .product-img span {
-      font-size: 5rem;
-    }
-
-    .product-content {
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    .product-name {
-      font-size: 1.5rem;
-      color: var(--brown-deep);
-      margin-bottom: 0.5rem;
-    }
-
-    .product-desc {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      font-style: italic;
-      margin-bottom: 1rem;
-    }
-
-    .product-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .product-price {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--gold-dark);
-    }
-
-    .product-btn {
-      background: var(--brown-deep);
-      color: var(--cream);
-      border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 50px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.3s;
-    }
-
-    .product-btn:hover {
-      background: var(--gold-dark);
-    }
-
-    .product-btn.added {
-      background: var(--success);
-    }
+    .products { padding: 6rem 2rem; background: var(--warm-white); }
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-tag { display: inline-block; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 1rem; font-weight: 600; }
+    .section-title { font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--brown-deep); margin-bottom: 0.5rem; }
+    .section-subtitle { font-family: var(--font-display); font-style: italic; font-size: 1.2rem; color: var(--text-secondary); }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+    .product-card { background: var(--cream); border-radius: 16px; overflow: hidden; transition: all 0.4s; border: 1px solid var(--divider); }
+    .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--gold-light); }
+    .product-img { width: 100%; height: 200px; object-fit: cover; background: var(--gold-light); display: flex; align-items: center; justify-content: center; }
+    .product-img span { font-size: 4rem; }
+    .product-content { padding: 1.5rem; text-align: center; }
+    .product-name { font-size: 1.3rem; color: var(--brown-deep); margin-bottom: 0.3rem; }
+    .product-desc { font-size: 0.9rem; color: var(--text-muted); font-style: italic; margin-bottom: 1rem; }
+    .product-footer { display: flex; justify-content: space-between; align-items: center; }
+    .product-price { font-size: 1.3rem; font-weight: 600; color: var(--gold-dark); }
+    .product-btn { background: var(--brown-deep); color: var(--cream); border: none; padding: 0.6rem 1.2rem; border-radius: 50px; cursor: pointer; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; }
+    .product-btn:hover { background: var(--gold-dark); }
+    .product-btn.added { background: var(--success); }
 
     /* VALOR */
-    .valor {
-      padding: 6rem 2rem;
-      background: var(--cream);
-    }
-
-    .valor-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .valor-item {
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .valor-icon {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 1.5rem;
-      background: var(--gold-light);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .valor-icon span {
-      font-size: 2.5rem;
-    }
-
-    .valor-title {
-      font-size: 1.3rem;
-      color: var(--brown-deep);
-      margin-bottom: 0.5rem;
-    }
-
-    .valor-desc {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
+    .valor { padding: 6rem 2rem; background: var(--cream); }
+    .valor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; max-width: 1100px; margin: 0 auto; }
+    .valor-item { text-align: center; padding: 2rem; }
+    .valor-icon { width: 70px; height: 70px; margin: 0 auto 1.5rem; background: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .valor-icon span { font-size: 2rem; }
+    .valor-title { font-size: 1.2rem; color: var(--brown-deep); margin-bottom: 0.5rem; }
+    .valor-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
 
     /* LIFESTYLE */
-    .lifestyle {
-      padding: 6rem 2rem;
-      background: var(--warm-white);
-    }
-
-    .lifestyle-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto 3rem;
-    }
-
-    .lifestyle-img {
-      border-radius: 20px;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-      background: var(--gold-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lifestyle-img span {
-      font-size: 6rem;
-      opacity: 0.5;
-    }
-
-    .lifestyle-text {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .lifestyle-quote {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 1.6rem;
-      color: var(--brown-deep);
-      line-height: 1.5;
-    }
+    .lifestyle { padding: 6rem 2rem; background: var(--warm-white); }
+    .lifestyle-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto 3rem; }
+    .lifestyle-img { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; background: var(--gold-light); display: flex; align-items: center; justify-content: center; }
+    .lifestyle-img span { font-size: 5rem; opacity: 0.5; }
+    .lifestyle-text { text-align: center; max-width: 600px; margin: 0 auto; }
+    .lifestyle-quote { font-family: var(--font-display); font-style: italic; font-size: 1.4rem; color: var(--brown-deep); line-height: 1.5; }
 
     /* TESTIMONIALS */
-    .testimonials {
-      padding: 6rem 2rem;
-      background: var(--brown-deep);
-      color: var(--cream);
-    }
-
-    .testimonials .section-title {
-      color: var(--cream);
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .testimonial-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .testimonial-stars {
-      color: var(--gold);
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .testimonial-text {
-      font-style: italic;
-      color: var(--cream);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-      opacity: 0.9;
-    }
-
-    .testimonial-author {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--gold);
-    }
+    .testimonials { padding: 6rem 2rem; background: var(--brown-deep); color: var(--cream); }
+    .testimonials .section-title { color: var(--cream); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+    .testimonial-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center; }
+    .testimonial-stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 1rem; }
+    .testimonial-text { font-style: italic; color: var(--cream); line-height: 1.7; margin-bottom: 1.5rem; opacity: 0.9; }
+    .testimonial-author { font-family: var(--font-display); font-style: italic; font-size: 1.1rem; color: var(--gold); }
 
     /* CTA */
-    .cta {
-      padding: 8rem 2rem;
-      text-align: center;
-      background: linear-gradient(180deg, var(--cream) 0%, var(--gold-light) 100%);
-    }
-
-    .cta-title {
-      font-size: clamp(2rem, 5vw, 3rem);
-      color: var(--brown-deep);
-      margin-bottom: 1rem;
-    }
-
-    .cta-text {
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      margin-bottom: 2rem;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      background: #25D366;
-      color: white;
-      padding: 1.2rem 3rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: all 0.3s;
-      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
-    }
+    .cta { padding: 8rem 2rem; text-align: center; background: linear-gradient(180deg, var(--cream) 0%, var(--gold-light) 100%); }
+    .cta-title { font-size: clamp(2rem, 5vw, 3rem); color: var(--brown-deep); margin-bottom: 1rem; }
+    .cta-text { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: #25D366; color: white; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s; box-shadow: 0 10px 30px rgba(37,211,102,0.3); }
+    .cta-btn:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(37,211,102,0.4); }
 
     /* FOOTER */
-    .footer {
-      padding: 3rem 2rem;
-      background: var(--brown-deep);
-      color: var(--cream);
-      text-align: center;
-      opacity: 0.8;
-    }
-
-    .footer-logo {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--gold);
-    }
-
-    .footer-social {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .footer-social a {
-      color: var(--cream);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.3s;
-    }
-
-    .footer-social a:hover {
-      color: var(--gold);
-    }
-
-    .footer-copy {
-      font-size: 0.85rem;
-      opacity: 0.6;
-    }
+    .footer { padding: 3rem 2rem; background: var(--brown-deep); color: var(--cream); text-align: center; }
+    .footer-logo { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1rem; color: var(--gold); }
+    .footer-social { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; align-items: center; }
+    .footer-social a { color: var(--cream); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+    .footer-social a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.85rem; opacity: 0.6; }
 
     /* WHATSAPP FLOAT */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      z-index: 999;
-      width: 64px;
-      height: 64px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
-      transition: all 0.3s;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-    }
-
-    .whatsapp-float svg {
-      width: 32px;
-      height: 32px;
-      fill: white;
-    }
+    .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 999; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 30px rgba(37,211,102,0.4); transition: all 0.3s; }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: white; }
 
     /* CART */
-    .cart-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(44, 26, 14, 0.5);
-      z-index: 2000;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s;
-    }
-
-    .cart-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .cart-panel {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 100%;
-      max-width: 420px;
-      height: 100%;
-      background: var(--warm-white);
-      z-index: 2001;
-      transform: translateX(100%);
-      transition: transform 0.4s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .cart-panel.active {
-      transform: translateX(0);
-    }
-
-    .cart-header {
-      padding: 1.5rem;
-      background: var(--brown-deep);
-      color: var(--cream);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .cart-close {
-      background: none;
-      border: none;
-      color: var(--cream);
-      font-size: 2rem;
-      cursor: pointer;
-    }
-
-    .cart-items {
-      flex: 1;
-      overflow-y: auto;
-      padding: 1rem;
-    }
-
-    .cart-empty {
-      text-align: center;
-      padding: 3rem 1rem;
-      color: var(--text-muted);
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--divider);
-    }
-
-    .cart-item-info {
-      flex: 1;
-    }
-
-    .cart-item-name {
-      font-family: var(--font-display);
-      font-weight: 500;
-      color: var(--brown-deep);
-    }
-
-    .cart-item-price {
-      font-size: 0.9rem;
-      color: var(--gold-dark);
-    }
-
-    .cart-item-qty {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .cart-item-remove {
-      background: none;
-      border: none;
-      color: #C75050;
-      cursor: pointer;
-      font-size: 1.2rem;
-      padding: 0.5rem;
-    }
-
-    .cart-footer {
-      padding: 1.5rem;
-      border-top: 2px solid var(--divider);
-    }
-
-    .cart-total {
-      display: flex;
-      justify-content: space-between;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--brown-deep);
-      margin-bottom: 1rem;
-    }
-
-    .cart-total-price {
-      color: var(--gold-dark);
-    }
-
-    .cart-form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-
-    .cart-input,
-    .cart-textarea {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      border: 2px solid var(--divider);
-      border-radius: 12px;
-      font-size: 1rem;
-      font-family: var(--font-body);
-      background: var(--cream);
-      color: var(--text-primary);
-      transition: border-color 0.3s;
-    }
-
-    .cart-input:focus,
-    .cart-textarea:focus {
-      outline: none;
-      border-color: var(--gold);
-    }
-
-    .cart-textarea {
-      min-height: 80px;
-      resize: vertical;
-    }
-
-    .whatsapp-btn {
-      background: #25D366;
-      color: white;
-      border: none;
-      padding: 1rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      transition: all 0.3s;
-    }
-
-    .whatsapp-btn:hover {
-      background: #1DA851;
-    }
+    .cart-overlay { position: fixed; inset: 0; background: rgba(44,26,14,0.5); z-index: 2000; opacity: 0; visibility: hidden; transition: all 0.3s; }
+    .cart-overlay.active { opacity: 1; visibility: visible; }
+    .cart-panel { position: fixed; top: 0; right: 0; width: 100%; max-width: 420px; height: 100%; background: var(--warm-white); z-index: 2001; transform: translateX(100%); transition: transform 0.4s ease; display: flex; flex-direction: column; }
+    .cart-panel.active { transform: translateX(0); }
+    .cart-header { padding: 1.5rem; background: var(--brown-deep); color: var(--cream); display: flex; justify-content: space-between; align-items: center; }
+    .cart-close { background: none; border: none; color: var(--cream); font-size: 2rem; cursor: pointer; }
+    .cart-items { flex: 1; overflow-y: auto; padding: 1rem; }
+    .cart-empty { text-align: center; padding: 3rem 1rem; color: var(--text-muted); }
+    .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--divider); }
+    .cart-item-name { font-family: var(--font-display); font-weight: 500; color: var(--brown-deep); }
+    .cart-item-price { font-size: 0.9rem; color: var(--gold-dark); }
+    .cart-item-remove { background: none; border: none; color: #C75050; cursor: pointer; font-size: 1.2rem; padding: 0.5rem; }
+    .cart-footer { padding: 1.5rem; border-top: 2px solid var(--divider); }
+    .cart-total { display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 700; color: var(--brown-deep); margin-bottom: 1rem; }
+    .cart-total-price { color: var(--gold-dark); }
+    .cart-form { display: flex; flex-direction: column; gap: 0.8rem; }
+    .cart-input, .cart-textarea { width: 100%; padding: 0.9rem 1rem; border: 2px solid var(--divider); border-radius: 12px; font-size: 1rem; font-family: var(--font-body); background: var(--cream); color: var(--text-primary); transition: border-color 0.3s; }
+    .cart-input:focus, .cart-textarea:focus { outline: none; border-color: var(--gold); }
+    .cart-textarea { min-height: 80px; resize: vertical; }
+    .whatsapp-btn { background: #25D366; color: white; border: none; padding: 1rem; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: all 0.3s; }
+    .whatsapp-btn:hover { background: #1DA851; }
 
     /* MOBILE */
+    @media (max-width: 900px) {
+      .hero { text-align: center; }
+      .hero-img { position: relative; top: auto; right: auto; transform: none; width: 80%; max-width: 400px; margin: 2rem auto 0; }
+      .hero-content { max-width: 100%; text-align: center; }
+      .hero-buttons { justify-content: center; }
+      .lifestyle-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 768px) {
-      .nav {
-        padding: 1rem;
-      }
-
-      .nav-links {
-        gap: 1rem;
-      }
-
-      .nav-links a:not(.nav-cta) {
-        display: none;
-      }
-
-      .hero {
-        padding: 80px 1.5rem 40px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .btn-primary,
-      .btn-secondary {
-        width: 100%;
-        max-width: 280px;
-        justify-content: center;
-      }
-
-      .products-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .lifestyle-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .whatsapp-float {
-        bottom: 1.5rem;
-        right: 1.5rem;
-        width: 56px;
-        height: 56px;
-      }
+      .nav { padding: 1rem; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .btn-primary, .btn-secondary { padding: 0.9rem 1.5rem; font-size: 0.9rem; }
+      .products-grid { grid-template-columns: 1fr; }
+      .valor-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .whatsapp-float { bottom: 1.5rem; right: 1.5rem; width: 56px; height: 56px; }
+    }
+    @media (max-width: 480px) {
+      .valor-grid { grid-template-columns: 1fr; }
     }
 
-    /* Animations */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    :root {
-      --success: #4A8C59;
-    }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
@@ -865,23 +206,19 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero" id="hero">
+  <section class="hero">
     <div class="hero-content">
       <span class="hero-tag">Cuenca, Ecuador</span>
       <h1 class="hero-title">Kuchen Trujen</h1>
       <p class="hero-subtitle">Receta especial de familia, horneada con cariño</p>
       <p class="hero-tagline">Cada mordida, un recuerdo</p>
-      
       <div class="hero-buttons">
         <a href="#sabores" class="btn-primary">Ver Sabores</a>
-        <a href="#" onclick="sendWhatsAppDirect(); return false;" class="btn-secondary">💬 Ordenar por WhatsApp</a>
+        <a href="#" onclick="sendWhatsAppDirect(); return false;" class="btn-secondary">💬 Ordenar</a>
       </div>
-
-      <div class="ornament">
-        <div class="ornament-line"></div>
-        <div class="ornament-dot"></div>
-        <div class="ornament-line"></div>
-      </div>
+    </div>
+    <div class="hero-img">
+      <img src="images/kuchen-trujen-box.jpg" alt="Kuchen Trujen - Kuchen artesanal en caja" loading="eager">
     </div>
   </section>
 
@@ -892,7 +229,6 @@
       <h2 class="section-title">Nuestros Sabores</h2>
       <p class="section-subtitle">Tradición que se siente en cada capa</p>
     </div>
-
     <div class="products-grid" id="productsGrid"></div>
   </section>
 
@@ -902,28 +238,11 @@
       <span class="section-tag">¿Por qué nosotros?</span>
       <h2 class="section-title">Hecho con amor</h2>
     </div>
-
     <div class="valor-grid">
-      <div class="valor-item fade-in">
-        <div class="valor-icon"><span>🎂</span></div>
-        <h3 class="valor-title">Artesanal</h3>
-        <p class="valor-desc">Horneado a mano, como en casa de la abuela. Cada pieza es única.</p>
-      </div>
-      <div class="valor-item fade-in">
-        <div class="valor-icon"><span>🌿</span></div>
-        <h3 class="valor-title">Ingredientes selectos</h3>
-        <p class="valor-desc">Solo lo mejor llega a tu mesa. Calidad que se nota.</p>
-      </div>
-      <div class="valor-item fade-in">
-        <div class="valor-icon"><span>🎁</span></div>
-        <h3 class="valor-title">Ideal para regalo</h3>
-        <p class="valor-desc">Empaque elegante, sonrisa garantizada. El detalle perfecto.</p>
-      </div>
-      <div class="valor-item fade-in">
-        <div class="valor-icon"><span>🚚</span></div>
-        <h3 class="valor-title">Entrega en Cuenca</h3>
-        <p class="valor-desc">Fresco en tu puerta. Te lo llevamos con cariño.</p>
-      </div>
+      <div class="valor-item fade-in"><div class="valor-icon"><span>🎂</span></div><h3 class="valor-title">Artesanal</h3><p class="valor-desc">Horneado a mano, como en casa de la abuela. Cada pieza es única.</p></div>
+      <div class="valor-item fade-in"><div class="valor-icon"><span>🌿</span></div><h3 class="valor-title">Ingredientes selectos</h3><p class="valor-desc">Solo lo mejor llega a tu mesa. Calidad que se nota.</p></div>
+      <div class="valor-item fade-in"><div class="valor-icon"><span>🎁</span></div><h3 class="valor-title">Ideal para regalo</h3><p class="valor-desc">Empaque elegante, sonrisa garantizada. El detalle perfecto.</p></div>
+      <div class="valor-item fade-in"><div class="valor-icon"><span>🚚</span></div><h3 class="valor-title">Entrega en Cuenca</h3><p class="valor-desc">Fresco en tu puerta. Te lo llevamos con cariño.</p></div>
     </div>
   </section>
 
@@ -933,12 +252,10 @@
       <span class="section-tag">Momentos especiales</span>
       <h2 class="section-title">Cada momento merece un kuchen</h2>
     </div>
-
     <div class="lifestyle-grid">
       <div class="lifestyle-img"><span>🎂</span></div>
       <div class="lifestyle-img"><span>☕</span></div>
     </div>
-
     <div class="lifestyle-text">
       <p class="lifestyle-quote">"Un kuchen compartido es un momento que se queda en el corazón"</p>
     </div>
@@ -950,23 +267,10 @@
       <span class="section-tag" style="color: var(--gold);">Lo que dicen</span>
       <h2 class="section-title">Nuestros clientes</h2>
     </div>
-
     <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"El kuchen de ciruela es espectacular. Me recuerda a los que hacía mi abuela alemana. Y el empaque es hermoso."</p>
-        <p class="testimonial-author">Sofia Wegmann</p>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Pedí para el cumpleaños de mi mamá y fue la sensación. Ya es tradición en casa. ¡100% recomendado!"</p>
-        <p class="testimonial-author">María José E.</p>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"El regalo perfecto para mis suegros. El sabor es increíble y llega perfecto a la puerta."</p>
-        <p class="testimonial-author">Andrés Córdova</p>
-      </div>
+      <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"El kuchen de ciruela es espectacular. Me recuerda a los que hacía mi abuela alemana. Y el empaque es hermoso."</p><p class="testimonial-author">Sofia Wegmann</p></div>
+      <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Pedí para el cumpleaños de mi mamá y fue la sensación. Ya es tradición en casa. ¡100% recomendado!"</p><p class="testimonial-author">María José E.</p></div>
+      <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"El regalo perfecto para mis suegros. El sabor es increíble y llega perfecto a la puerta."</p><p class="testimonial-author">Andrés Córdova</p></div>
     </div>
   </section>
 
@@ -974,12 +278,7 @@
   <section class="cta">
     <h2 class="cta-title">Tu momento especial nos inspira</h2>
     <p class="cta-text">Cada kuchen cuenta una historia. ¿Cuál quieres contar hoy?</p>
-    <a href="#" onclick="sendWhatsAppDirect(); return false;" class="cta-btn">
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-      Ordenar por WhatsApp
-    </a>
+    <a href="#" onclick="sendWhatsAppDirect(); return false;" class="cta-btn">📱 Ordenar por WhatsApp</a>
   </section>
 
   <!-- FOOTER -->
@@ -1000,36 +299,26 @@
   <div class="cart-panel" id="cartPanel">
     <div class="cart-header">
       <h3>🛒 Tu Pedido</h3>
-      <button class="cart-close" onclick="toggleCart()">&times;</button>
+      <button class="cart-close" onclick="toggleCart()">×</button>
     </div>
-    <div class="cart-items" id="cartItems">
-      <div class="cart-empty">Tu carrito está vacío</div>
-    </div>
+    <div class="cart-items" id="cartItems"><div class="cart-empty">Tu carrito está vacío</div></div>
     <div class="cart-footer" id="cartFooter" style="display: none;">
-      <div class="cart-total">
-        <span>Total:</span>
-        <span class="cart-total-price" id="cartTotal">$0.00</span>
-      </div>
+      <div class="cart-total"><span>Total:</span><span class="cart-total-price" id="cartTotal">$0.00</span></div>
       <div class="cart-form">
         <input type="text" class="cart-input" id="cartAddress" placeholder="¿A qué sector de Cuenca?">
         <textarea class="cart-textarea" id="cartNote" placeholder="Nota especial (opcional)"></textarea>
-        <button class="whatsapp-btn" onclick="sendWhatsApp()">
-          📱 Enviar por WhatsApp
-        </button>
+        <button class="whatsapp-btn" onclick="sendWhatsApp()">📱 Enviar por WhatsApp</button>
       </div>
     </div>
   </div>
 
   <!-- FLOATING WHATSAPP -->
   <a href="#" onclick="sendWhatsAppDirect(); return false;" class="whatsapp-float" title="Ordenar por WhatsApp">
-    <svg viewBox="0 0 24 24">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
   <script>
     const WHATSAPP = '593XXXXXXXXX';
-
     const products = [
       { id: 'kuchen-ciruela', name: 'Kuchen de Ciruela', desc: 'Ciruelas rojas del Valle Andino', price: 9.50, emoji: '🍑' },
       { id: 'kuchen-durazno', name: 'Kuchen de Durazno', desc: 'Sol y dulzura de temporada', price: 9.00, emoji: '🍑' },
@@ -1040,12 +329,10 @@
       { id: 'cookie-choc', name: 'Cookie de Chocolate', desc: 'Chunks de chocolate belga', price: 4.50, emoji: '🍪' },
       { id: 'alfajores', name: 'Alfajores', desc: 'Dulce de leche y coco', price: 5.00, emoji: '🥠' },
     ];
-
     let cart = [];
 
     function renderProducts() {
-      const grid = document.getElementById('productsGrid');
-      grid.innerHTML = products.map(p => `
+      document.getElementById('productsGrid').innerHTML = products.map(p => `
         <div class="product-card">
           <div class="product-img"><span>${p.emoji}</span></div>
           <div class="product-content">
@@ -1062,26 +349,15 @@
       `).join('');
     }
 
-    function getCartQty(id) {
-      const item = cart.find(i => i.id === id);
-      return item ? item.qty : 0;
-    }
-
-    function getProduct(id) {
-      return products.find(p => p.id === id);
-    }
+    function getCartQty(id) { const item = cart.find(i => i.id === id); return item ? item.qty : 0; }
+    function getProduct(id) { return products.find(p => p.id === id); }
 
     function addToCart(id) {
       const existing = cart.find(i => i.id === id);
-      if (existing) {
-        existing.qty++;
-      } else {
-        const p = getProduct(id);
-        cart.push({ id: p.id, name: p.name, price: p.price, qty: 1 });
-      }
+      if (existing) existing.qty++;
+      else { const p = getProduct(id); cart.push({ id: p.id, name: p.name, price: p.price, qty: 1 }); }
       renderProducts();
       updateCartUI();
-      
       const btn = document.getElementById(`btn-${id}`);
       btn.classList.add('added');
       setTimeout(() => btn.classList.remove('added'), 1500);
@@ -1091,18 +367,17 @@
       const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
       const items = document.getElementById('cartItems');
       const footer = document.getElementById('cartFooter');
-
       if (cart.length === 0) {
         items.innerHTML = '<div class="cart-empty">Tu carrito está vacío</div>';
         footer.style.display = 'none';
       } else {
         items.innerHTML = cart.map(i => `
           <div class="cart-item">
-            <div class="cart-item-info">
-              <div class="cart-item-name">${i.name}</div>
+            <div class="cart-item-name">${i.name}</div>
+            <div>
               <div class="cart-item-price">$${i.price.toFixed(2)} x ${i.qty}</div>
+              <button class="cart-item-remove" onclick="removeFromCart('${i.id}')">×</button>
             </div>
-            <button class="cart-item-remove" onclick="removeFromCart('${i.id}')">×</button>
           </div>
         `).join('');
         footer.style.display = 'block';
@@ -1110,31 +385,19 @@
       }
     }
 
-    function removeFromCart(id) {
-      cart = cart.filter(i => i.id !== id);
-      renderProducts();
-      updateCartUI();
-    }
-
-    function toggleCart() {
-      document.getElementById('cartPanel').classList.toggle('active');
-      document.querySelector('.cart-overlay').classList.toggle('active');
-    }
+    function removeFromCart(id) { cart = cart.filter(i => i.id !== id); renderProducts(); updateCartUI(); }
+    function toggleCart() { document.getElementById('cartPanel').classList.toggle('active'); document.querySelector('.cart-overlay').classList.toggle('active'); }
 
     function sendWhatsApp() {
       const address = document.getElementById('cartAddress').value.trim();
       const note = document.getElementById('cartNote').value.trim();
       const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
-
       let msg = `🎂 *Pedido - Kuchen Trujen*\n─────────────────\n`;
-      cart.forEach(i => {
-        msg += `${i.name} x${i.qty} — $${(i.price * i.qty).toFixed(2)}\n`;
-      });
+      cart.forEach(i => { msg += `${i.name} x${i.qty} — $${(i.price * i.qty).toFixed(2)}\n`; });
       msg += `─────────────────\n💰 *Total: $${total.toFixed(2)}*\n`;
       if (address) msg += `📍 Entrega: ${address}\n`;
       if (note) msg += `📝 Nota: ${note}\n`;
       msg += `\n¡Gracias por confiar! 🧡`;
-
       window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
@@ -1142,12 +405,8 @@
       window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('🎂 Hola! Quiero hacer un pedido de Kuchen Trujen 🧡')}`, '_blank');
     }
 
-    // Fade-in
-    const observer = new IntersectionObserver(e => {
-      e.forEach(el => { if (el.isIntersecting) el.classList.add('visible'); });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(e => { e.forEach(el => { if (el.isIntersecting) el.classList.add('visible'); }); }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
     renderProducts();
   </script>
 
