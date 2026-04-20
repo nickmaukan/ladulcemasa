@@ -99,8 +99,7 @@
     .valor { padding: 6rem 2rem; background: var(--cream); }
     .valor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; max-width: 1100px; margin: 0 auto; }
     .valor-item { text-align: center; padding: 2rem; }
-    .valor-icon { width: 70px; height: 70px; margin: 0 auto 1.5rem; background: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .valor-icon span { font-size: 2rem; }
+    .valor-icon { width: 70px; height: 70px; margin: 0 auto 1.5rem; background: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--brown-deep); }
     .valor-title { font-size: 1.2rem; color: var(--brown-deep); margin-bottom: 0.5rem; }
     .valor-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
 
@@ -231,10 +230,34 @@
       <h2 class="section-title">Hecho con amor</h2>
     </div>
     <div class="valor-grid">
-      <div class="valor-item fade-in"><div class="valor-icon"><span>🎂</span></div><h3 class="valor-title">Artesanal</h3><p class="valor-desc">Horneado a mano, como en casa de la abuela. Cada pieza es única.</p></div>
-      <div class="valor-item fade-in"><div class="valor-icon"><span>🌿</span></div><h3 class="valor-title">Ingredientes selectos</h3><p class="valor-desc">Solo lo mejor llega a tu mesa. Calidad que se nota.</p></div>
-      <div class="valor-item fade-in"><div class="valor-icon"><span>🎁</span></div><h3 class="valor-title">Ideal para regalo</h3><p class="valor-desc">Empaque elegante, sonrisa garantizada. El detalle perfecto.</p></div>
-      <div class="valor-item fade-in"><div class="valor-icon"><span>🚚</span></div><h3 class="valor-title">Entrega en Cuenca</h3><p class="valor-desc">Fresco en tu puerta. Te lo llevamos con cariño.</p></div>
+      <div class="valor-item fade-in">
+        <div class="valor-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <h3 class="valor-title">Artesanal</h3>
+        <p class="valor-desc">Horneado a mano, como en casa de la abuela. Cada pieza es única.</p>
+      </div>
+      <div class="valor-item fade-in">
+        <div class="valor-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 class="valor-title">Ingredientes selectos</h3>
+        <p class="valor-desc">Solo lo mejor llega a tu mesa. Calidad que se nota.</p>
+      </div>
+      <div class="valor-item fade-in">
+        <div class="valor-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 3v5M7 8V6a5 5 0 0 1 10 0v2"/></svg>
+        </div>
+        <h3 class="valor-title">Ideal para regalo</h3>
+        <p class="valor-desc">Empaque elegante, sonrisa garantizada. El detalle perfecto.</p>
+      </div>
+      <div class="valor-item fade-in">
+        <div class="valor-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17h18M3 17l2-9h14l2 9M9 8V5M15 8V5M5 17v-4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/></svg>
+        </div>
+        <h3 class="valor-title">Entrega en Cuenca</h3>
+        <p class="valor-desc">Fresco en tu puerta. Te lo llevamos con cariño.</p>
+      </div>
     </div>
   </section>
 
